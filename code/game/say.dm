@@ -133,7 +133,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 		raw_message = D.scramble(raw_message)
 		return no_quote ? raw_message : source.say_quote(raw_message, spans, message_mods)
 	else
-		return "makes a strange sound."
+		return "издаёт странный звук."
 
 /proc/get_radio_span(freq)
 	var/returntext = GLOB.freqtospan["[freq]"]
@@ -142,7 +142,7 @@ GLOBAL_LIST_INIT(freqtospan, list(
 	return "radio"
 
 /proc/get_radio_name(freq)
-	var/returntext = GLOB.reverseradiochannels["[freq]"]
+	var/returntext = ru_comms(GLOB.reverseradiochannels["[freq]"])
 	if(returntext)
 		return returntext
 	return "[copytext_char("[freq]", 1, 4)].[copytext_char("[freq]", 4, 5)]"

@@ -1,5 +1,5 @@
 /obj/item/flamethrower
-	name = "flamethrower"
+	name = "огнемёт"
 	desc = "You are a firestarter!"
 	icon = 'icons/obj/flamethrower.dmi'
 	icon_state = "flamethrowerbase"
@@ -143,22 +143,22 @@
 	if(beaker && isliving(user) && user.canUseTopic(src, BE_CLOSE, NO_DEXTERITY, FALSE, TRUE))
 		user.put_in_hands(beaker)
 		beaker = null
-		to_chat(user, "<span class='notice'>You remove the fuel container from [src]!</span>")
+		to_chat(user, span_notice("Вынимаю бак с плазмой из <b>[src]</b>!"))
 		update_icon()
 
 /obj/item/flamethrower/examine(mob/user)
 	. = ..()
 	if(beaker)
-		. += "<span class='notice'>\The [src] has \a [beaker] attached. Alt-click to remove it.</span>"
+		. += "<hr><span class='notice'>К <b>[src.name]</b> подсоединён <b>[beaker]</b>. Альт-клик для изъятия.</span>"
 
 /obj/item/flamethrower/proc/toggle_igniter(mob/user)
 	if(!beaker)
-		to_chat(user, "<span class='notice'>Attach a fuel container first!</span>")
+		to_chat(user, span_notice("Присоединить бы бак сначала!"))
 		return
 	if(!status)
-		to_chat(user, "<span class='notice'>Secure the igniter first!</span>")
+		to_chat(user, span_notice("Закрепить бы воспламенитель сначала!"))
 		return
-	to_chat(user, "<span class='notice'>You [lit ? "extinguish" : "ignite"] [src]!</span>")
+	to_chat(user, span_notice("[lit ? "Тушу" : "Разжигаю"] <b>[src.name]</b>!"))
 	lit = !lit
 	if(lit)
 		playsound(loc, acti_sound, 50, TRUE)

@@ -1,6 +1,6 @@
 /obj/item/energy_katana
-	name = "energy katana"
-	desc = "A katana infused with strong energy."
+	name = "Энергетическая катана"
+	desc = "Катана, наполненная сильной энергией."
 	icon_state = "energy_katana"
 	item_state = "energy_katana"
 	lefthand_file = 'icons/mob/inhands/weapons/swords_lefthand.dmi'
@@ -10,8 +10,9 @@
 	block_chance = 50
 	armour_penetration = 50
 	w_class = WEIGHT_CLASS_NORMAL
-	hitsound = 'sound/weapons/bladeslice.ogg'
-	attack_verb = list("attacked", "slashed", "stabbed", "sliced", "torn", "ripped", "diced", "cut")
+	hitsound = 'sound/weapons/blade1.ogg'
+	block_sounds = list('sound/weapons/bladeb.ogg')
+	attack_verb = list("атакует", "рубит", "втыкает", "разрезает", "кромсает", "разрывает", "нарезает", "режет")
 	slot_flags = ITEM_SLOT_BACK|ITEM_SLOT_BELT
 	sharpness = IS_SHARP
 	max_integrity = 200
@@ -29,7 +30,7 @@
 
 /obj/item/energy_katana/attack_self(mob/user)
 	dash_toggled = !dash_toggled
-	to_chat(user, "<span class='notice'>You [dash_toggled ? "enable" : "disable"] the dash function on [src].</span>")
+	to_chat(user, span_notice("[dash_toggled ? "enable" : "disable"] функцию рывка на [src]."))
 
 /obj/item/energy_katana/afterattack(atom/target, mob/user, proximity_flag, click_parameters)
 	. = ..()
@@ -78,20 +79,20 @@
 	var/msg = ""
 
 	if(user.put_in_hands(src))
-		msg = "Your Energy Katana teleports into your hand!"
+		msg = "Энергетическая Катана телепортируется в мою руку!"
 	else if(user.equip_to_slot_if_possible(src, ITEM_SLOT_BELT, 0, 1, 1))
-		msg = "Your Energy Katana teleports back to you, sheathing itself as it does so!</span>"
+		msg = "Энергетическая Катана телепортируется обратно ко мне, убирая себя в ножны!</span>"
 	else
-		msg = "Your Energy Katana teleports to your location!"
+		msg = "Энергетическая Катана телепортируется ко мне!"
 
 	if(caught)
 		if(loc == user)
-			msg = "You catch your Energy Katana!"
+			msg = "Ловлю свою Энергетическую Катану!"
 		else
-			msg = "Your Energy Katana lands at your feet!"
+			msg = "Энергетическая Катана приземляется у моих ног!"
 
 	if(msg)
-		to_chat(user, "<span class='notice'>[msg]</span>")
+		to_chat(user, span_notice("[msg]"))
 
 
 /obj/item/energy_katana/Destroy()

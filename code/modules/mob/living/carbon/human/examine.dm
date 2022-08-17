@@ -6,6 +6,12 @@
 	var/t_him = p_them()
 	var/t_has = p_have()
 	var/t_is = p_are()
+
+	var/t_on 	= ru_who(TRUE)
+	var/t_ego 	= ru_ego()
+	var/t_na 	= ru_na()
+	var/t_a 	= ru_a()
+
 	var/obscure_name
 
 	var/list/obscured = check_obscured_slots()
@@ -27,12 +33,12 @@
 		if(istype(w_uniform, /obj/item/clothing/under))
 			var/obj/item/clothing/under/U = w_uniform
 			if(U.attached_accessory)
-				accessory_msg += " with [icon2html(U.attached_accessory, user)] \a [U.attached_accessory]"
+				accessory_msg += " с [icon2html(U.attached_accessory, user)] [U.attached_accessory]"
 
-		. += "[t_He] [t_is] wearing [w_uniform.get_examine_string(user)][accessory_msg]."
+		. += "Одет[t_a] он[t_a] в [w_uniform.get_examine_string(user)][accessory_msg].\n"
 	//head
 	if(head)
-		. += "[t_He] [t_is] wearing [head.get_examine_string(user)] on [t_his] head."
+		. += "На голове у н[t_ego] [head.get_examine_string(user)].\n"
 	//suit/armor
 	if(wear_suit)
 		. += "[t_He] [t_is] wearing [wear_suit.get_examine_string(user)]."
@@ -41,7 +47,7 @@
 			. += "[t_He] [t_is] carrying [s_store.get_examine_string(user)] on [t_his] [wear_suit.name]."
 	//back
 	if(back)
-		. += "[t_He] [t_has] [back.get_examine_string(user)] on [t_his] back."
+		. += "Со спины у н[t_ego] свисает [back.get_examine_string(user)].\n"
 
 	//Hands
 	for(var/obj/item/I in held_items)
@@ -50,20 +56,18 @@
 
 	var/datum/component/forensics/FR = GetComponent(/datum/component/forensics)
 	//gloves
+//gloves
 	if(gloves && !(ITEM_SLOT_GLOVES in obscured))
-		. += "[t_He] [t_has] [gloves.get_examine_string(user)] on [t_his] hands."
+		. += "А на руках у н[t_ego] [gloves.get_examine_string(user)].\n"
 	else if(FR && length(FR.blood_DNA))
 		if(num_hands)
-			. += "<span class='warning'>[t_He] [t_has] [num_hands > 1 ? "" : "a"] blood-stained hand[num_hands > 1 ? "s" : ""]!</span>"
-
-	//handcuffed?
-
+			. += "<span class='warning'>[ru_ego(TRUE)] рук[num_hands > 1 ? "и" : "а"] также в крови!</span>\n"
 	//handcuffed?
 	if(handcuffed)
 		if(istype(handcuffed, /obj/item/restraints/handcuffs/cable))
-			. += "<span class='warning'>[t_He] [t_is] [icon2html(handcuffed, user)] restrained with cable!</span>"
+			. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] связан[t_a]!</span>\n"
 		else
-			. += "<span class='warning'>[t_He] [t_is] [icon2html(handcuffed, user)] handcuffed!</span>"
+			. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] в наручниках!</span>\n"
 
 	//belt
 	if(belt)
@@ -83,7 +87,7 @@
 	//eyes
 	if(!(ITEM_SLOT_EYES in obscured))
 		if(glasses)
-			. += "[t_He] [t_has] [glasses.get_examine_string(user)] covering [t_his] eyes."
+			. += "Также на [t_na] [glasses.get_examine_string(user)].\n"
 		else if(eye_color == BLOODCULT_EYE && iscultist(src) && HAS_TRAIT(src, CULT_EYES))
 			. += "<span class='warning'><B>[t_His] eyes are glowing an unnatural red!</B></span>"
 
@@ -123,9 +127,9 @@
 
 		if(!just_sleeping)
 			if(suiciding)
-				. += "<span class='warning'>[t_He] appear[p_s()] to have committed suicide... there is no hope of recovery.</span>"
+				. += "<span class='warning'>[t_on] выглядит как суицидник... [t_ego] уже невозможно спасти.</span>\n"
 			if(hellbound)
-				. += "<span class='warning'>[t_His] soul seems to have been ripped out of [t_his] body. Revival is impossible.</span>"
+				. += span_warning("[t_ego] душа выглядит вырванной из [t_ego] тела. Воскрешение невозможно.")
 			. += ""
 			if(getorgan(/obj/item/organ/brain) && !key && !get_ghost(FALSE, TRUE))
 				. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life and [t_his] soul has departed...</span>"
@@ -197,57 +201,57 @@
 	if(!(user == src && src.hal_screwyhud == SCREWYHUD_HEALTHY)) //fake healthy
 		if(temp)
 			if(temp < 25)
-				msg += "[t_He] [t_has] minor bruising.\n"
+				msg += "[t_on] имеет незначительные ушибы.\n"
 			else if(temp < 50)
-				msg += "[t_He] [t_has] <b>moderate</b> bruising!\n"
+				msg += "[t_on] <b>тяжело</b> ранен[t_a]!\n"
 			else
-				msg += "<B>[t_He] [t_has] severe bruising!</B>\n"
+				msg += "<B>[t_on] смертельно ранен[t_a]!</B>\n"
 
 		temp = getFireLoss()
 		if(temp)
 			if(temp < 25)
-				msg += "[t_He] [t_has] minor burns.\n"
+				msg += "[t_on] немного подгорел[t_a].\n"
 			else if (temp < 50)
-				msg += "[t_He] [t_has] <b>moderate</b> burns!\n"
+				msg += "[t_on] имеет <b>серьёзные</b> ожоги!\n"
 			else
-				msg += "<B>[t_He] [t_has] severe burns!</B>\n"
+				msg += "<B>[t_on] имеет смертельные ожоги!</B>\n"
 
 		temp = getCloneLoss()
 		if(temp)
 			if(temp < 25)
-				msg += "[t_He] [t_has] minor cellular damage.\n"
+				msg += "[t_on] имеет незначительные подтёки на теле.\n"
 			else if(temp < 50)
-				msg += "[t_He] [t_has] <b>moderate</b> cellular damage!\n"
+				msg += "[t_on] имеет <b>обвисшую</b> кожу на большей части тела!\n"
 			else
-				msg += "<b>[t_He] [t_has] severe cellular damage!</b>\n"
+				msg += "<b>[t_on] имеет тело состоящее из кусков свисающей плоти!</b>\n"
 
 
 	if(fire_stacks > 0)
-		msg += "[t_He] [t_is] covered in something flammable.\n"
+		msg += "[t_on] в чем-то горючем.\n"
 	if(fire_stacks < 0)
-		msg += "[t_He] look[p_s()] a little soaked.\n"
+		msg += "[t_on] выглядит мокро.\n"
 
 
 	if(pulledby && pulledby.grab_state)
-		msg += "[t_He] [t_is] restrained by [pulledby]'s grip.\n"
+		msg += "[t_on] удерживается захватом [pulledby].\n"
 
 	if(nutrition < NUTRITION_LEVEL_STARVING - 50)
-		msg += "[t_He] [t_is] severely malnourished.\n"
+		msg += "[t_on] выглядит смертельно истощённо.\n"
 	else if(nutrition >= NUTRITION_LEVEL_FAT)
 		if(user.nutrition < NUTRITION_LEVEL_STARVING - 50)
-			msg += "[t_He] [t_is] plump and delicious looking - Like a fat little piggy. A tasty piggy.\n"
+			msg += "[t_on] выглядит как толстенький, словно поросёнок. Очень вкусный поросёнок.\n"
 		else
-			msg += "[t_He] [t_is] quite chubby.\n"
+			msg += "[t_on] выглядит довольно плотно.\n"
 	switch(disgust)
 		if(DISGUST_LEVEL_GROSS to DISGUST_LEVEL_VERYGROSS)
-			msg += "[t_He] look[p_s()] a bit grossed out.\n"
+			msg += "[t_on] выглядит немного неприятно.\n"
 		if(DISGUST_LEVEL_VERYGROSS to DISGUST_LEVEL_DISGUSTED)
-			msg += "[t_He] look[p_s()] really grossed out.\n"
+			msg += "[t_on] выглядит очень неприятно.\n"
 		if(DISGUST_LEVEL_DISGUSTED to INFINITY)
-			msg += "[t_He] look[p_s()] extremely disgusted.\n"
+			msg += "[t_on] выглядит отвратительно.\n"
 
 	if(blood_volume < BLOOD_VOLUME_SAFE || skin_tone == "albino")
-		msg += "[t_He] [t_has] pale skin.\n"
+		msg += "[ru_ego(TRUE)] кожа бледная.\n"
 
 	if(bleedsuppress)
 		msg += "[t_He] [t_is] bandaged with something.\n"
@@ -272,26 +276,26 @@
 		if(drunkenness && !skipface) //Drunkenness
 			switch(drunkenness)
 				if(11 to 21)
-					msg += "[t_He] [t_is] slightly flushed.\n"
+					msg += "[t_on] немного пьян[t_a].\n"
 				if(21.01 to 41) //.01s are used in case drunkenness ends up to be a small decimal
-					msg += "[t_He] [t_is] flushed.\n"
+					msg += "[t_on] пьян[t_a].\n"
 				if(41.01 to 51)
-					msg += "[t_He] [t_is] quite flushed and [t_his] breath smells of alcohol.\n"
+					msg += "[t_on] довольно пьян[t_a] и от н[t_ego] чувствуется запах алкоголя.\n"
 				if(51.01 to 61)
-					msg += "[t_He] [t_is] very flushed and [t_his] movements jerky, with breath reeking of alcohol.\n"
+					msg += "Очень пьян[t_a] и от н[t_ego] несёт перегаром.\n"
 				if(61.01 to 91)
-					msg += "[t_He] look[p_s()] like a drunken mess.\n"
+					msg += "[t_on] в стельку.\n"
 				if(91.01 to INFINITY)
-					msg += "[t_He] [t_is] a shitfaced, slobbering wreck.\n"
+					msg += "[t_on] в говно!\n"
 
 		if(src != user)
 			if(HAS_TRAIT(user, TRAIT_EMPATH))
 				if (a_intent != INTENT_HELP)
-					msg += "[t_He] seem[p_s()] to be on guard.\n"
+					msg += "[t_on] выглядит на готове.\n"
 				if (getOxyLoss() >= 10)
-					msg += "[t_He] seem[p_s()] winded.\n"
+					msg += "[t_on] выглядит измотанно.\n"
 				if (getToxLoss() >= 10)
-					msg += "[t_He] seem[p_s()] sickly.\n"
+					msg += "[t_on] выглядит болезненно.\n"
 				var/datum/component/mood/mood = src.GetComponent(/datum/component/mood)
 				if(mood.sanity <= SANITY_DISTURBED)
 					msg += "[t_He] seem[p_s()] distressed.\n"
@@ -309,17 +313,17 @@
 
 		switch(stat)
 			if(UNCONSCIOUS, HARD_CRIT)
-				msg += "[t_He] [t_is]n't responding to anything around [t_him] and seem[p_s()] to be asleep.\n"
+				msg += "<span class='deadsay'>[t_on] не реагирует на происходящее вокруг.</span>\n"
 			if(SOFT_CRIT)
-				msg += "[t_He] [t_is] barely conscious.\n"
+				msg += "<span class='deadsay'>[t_on] едва в сознании.</span>\n"
 			if(CONSCIOUS)
 				if(HAS_TRAIT(src, TRAIT_DUMB))
-					msg += "[t_He] [t_has] a stupid expression on [t_his] face.\n"
+					msg += "[t_on] имеет глупое выражение лица.\n"
 		if(getorgan(/obj/item/organ/brain))
 			if(!key)
-				msg += "<span class='deadsay'>[t_He] [t_is] totally catatonic. The stresses of life in deep-space must have been too much for [t_him]. Any recovery is unlikely.</span>\n"
-			else if(!client)
-				msg += "<span class='warning'>[t_He] appears to be suffering from SSD - Space Sleep Disorder. [t_He] may snap out of it at any time! Or maybe never. It's best to leave [t_him] be.</span>\n"
+				msg += "<span class='deadsay'>[t_on] выглядит не очень разумно.</span>\n"
+			if(!key)
+				msg += "<span class='deadsay'>[t_on] кататоник. Стресс от жизни в глубоком космосе сильно повлиял на н[t_ego]. Восстановление маловероятно.</span>\n"
 	if (length(msg))
 		. += "<span class='warning'>[msg.Join("")]</span>"
 
@@ -378,7 +382,7 @@
 					"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[View comment log\]</a>",
 					"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Add comment\]</a>"), "")
 	else if(isobserver(user) && traitstring)
-		. += "<span class='info'><b>Traits:</b> [traitstring]</span>"
+		. += "<span class='info'><b>Черты:</b> [traitstring]</span>"
 
 	//No flavor text unless the face can be seen. Prevents certain metagaming with impersonation.
 	var/invisible_man = skipface || get_visible_name() == "Unknown"
@@ -395,12 +399,34 @@
 /mob/living/proc/status_effect_examines(pronoun_replacement) //You can include this in any mob's examine() to show the examine texts of status effects!
 	var/list/dat = list()
 	if(!pronoun_replacement)
-		pronoun_replacement = p_they(TRUE)
+		pronoun_replacement = ru_who(TRUE)
 	for(var/V in status_effects)
 		var/datum/status_effect/E = V
 		if(E.examine_text)
-			var/new_text = replacetext(E.examine_text, "SUBJECTPRONOUN", pronoun_replacement)
-			new_text = replacetext(new_text, "[pronoun_replacement] is", "[pronoun_replacement] [p_are()]") //To make sure something become "They are" or "She is", not "They are" and "She are"
+			var/new_text = replacetext_char(E.examine_text, "SUBJECTPRONOUN", pronoun_replacement)
 			dat += "[new_text]\n" //dat.Join("\n") doesn't work here, for some reason
 	if(dat.len)
 		return dat.Join()
+
+/mob/living/carbon/human/examine_more(mob/user)
+	. = ..()
+	if ((wear_mask && (wear_mask.flags_inv & HIDEFACE)) || (head && (head.flags_inv & HIDEFACE)))
+		return
+	var/age_text
+	switch(age)
+		if(-INFINITY to 25)
+			age_text = "очень молод[ru_aya()]"
+		if(26 to 35)
+			age_text = "молод[ru_aya()]"
+		if(36 to 55)
+			age_text = "среднего возраста"
+		if(56 to 75)
+			age_text = "достаточно взросл[ru_aya()]"
+		if(76 to 100)
+			if(gender == FEMALE)
+				age_text = "старуха"
+			else
+				age_text = "старик"
+		if(101 to INFINITY)
+			age_text = "сейчас превратится в пыль"
+	. += list(span_notice("<hr>[ru_who(TRUE)] на вид [age_text]."))

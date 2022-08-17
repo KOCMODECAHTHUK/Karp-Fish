@@ -139,6 +139,8 @@
 #include "code\__DEFINES\dcs\flags.dm"
 #include "code\__DEFINES\dcs\helpers.dm"
 #include "code\__DEFINES\dcs\signals.dm"
+#include "code\__DEFINES\shitcode_defs\integrated_electronics.dm"
+#include "code\__DEFINES\shitcode_defs\padezhi.dm"
 #include "code\__DEFINES\whitesands_after_defines\icon_smoothing.dm"
 #include "code\__DEFINES\~whitesands_defines\_defines.dm"
 #include "code\__DEFINES\~whitesands_defines\atmospherics.dm"
@@ -3359,4 +3361,8 @@
 #include "interface\menu.dm"
 #include "interface\stylesheet.dm"
 #include "interface\skin.dmf"
+#include "white\valtos\code\_globalvars\text.dm"
+#include "white\valtos\code\serverside\pronouns_ru.dm"
+#include "white\valtos\code\serverside\text_ru.dm"
+#include "white\valtos\code\serverside\tooltip.dm"
 // END_INCLUDE
