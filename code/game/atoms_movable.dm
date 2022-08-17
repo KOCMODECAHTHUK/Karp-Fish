@@ -15,12 +15,12 @@
 	var/mob/pulledby = null
 	var/initial_language_holder = /datum/language_holder
 	var/datum/language_holder/language_holder	// Mindless mobs and objects need language too, some times. Mind holder takes prescedence.
-	var/verb_say = "says"
-	var/verb_ask = "asks"
-	var/verb_exclaim = "exclaims"
-	var/verb_whisper = "whispers"
-	var/verb_sing = "sings"
-	var/verb_yell = "yells"
+	var/verb_say = "говорит"
+	var/verb_ask = "спрашивает"
+	var/verb_exclaim = "восклицает"
+	var/verb_whisper = "шепчет"
+	var/verb_sing = "поёт"
+	var/verb_yell = "выкрикивает"
 	var/speech_span
 	var/inertia_dir = 0
 	var/atom/inertia_last_loc
@@ -258,8 +258,8 @@
 		var/mob/M = AM
 		log_combat(src, M, "grabbed", addition="passive grab")
 		if(!supress_message)
-			M.visible_message("<span class='warning'>[src] grabs [M] passively.</span>", \
-				"<span class='danger'>[src] grabs you passively.</span>")
+			M.visible_message(span_warning("<b>[src]</b> хватает <b>[M]</b>.") , \
+				span_danger("<b>[src]</b> хватает меня."))
 	return TRUE
 
 /atom/movable/proc/stop_pulling()

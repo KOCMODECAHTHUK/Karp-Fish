@@ -79,7 +79,7 @@ export const SettingsGeneral = (props, context) => {
   return (
     <Section>
       <LabeledList>
-        <LabeledList.Item label="Theme">
+        <LabeledList.Item label="Тема">
           <Dropdown
             selected={theme}
             options={THEMES}
@@ -92,7 +92,7 @@ export const SettingsGeneral = (props, context) => {
             }
           />
         </LabeledList.Item>
-        <LabeledList.Item label="Font style">
+        <LabeledList.Item label="Шрифт">
           <Stack inline align="baseline">
             <Stack.Item>
               {(!freeFont && (
@@ -152,7 +152,7 @@ export const SettingsGeneral = (props, context) => {
             }
           />
         </LabeledList.Item>
-        <LabeledList.Item label="Line height">
+        <LabeledList.Item label="Высота линий">
           <NumberInput
             width="4em"
             step={0.01}

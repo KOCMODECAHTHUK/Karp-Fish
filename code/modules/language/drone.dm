@@ -1,6 +1,6 @@
 /datum/language/drone
-	name = "Drone"
-	desc = "A heavily encoded damage control coordination stream, with special flags for hats."
+	name = "Дронлинк"
+	desc = "Сильно закодированный двубитный поток данных для координации ремонтных работ и специальными флагами для идентификации шляп."
 	speech_verb = "chitters"
 	ask_verb = "chitters inquisitively"
 	exclaim_verb = "chitters loudly"

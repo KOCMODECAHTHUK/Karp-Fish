@@ -65,7 +65,7 @@ export class ChatPanel extends Component {
             icon="arrow-down"
             onClick={() => chatRenderer.scrollToBottom()}
           >
-            Scroll to bottom
+            Вниз
           </Button>
         )}
       </>

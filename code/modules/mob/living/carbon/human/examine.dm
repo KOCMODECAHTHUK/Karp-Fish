@@ -21,10 +21,45 @@
 		var/mob/living/L = user
 		if(HAS_TRAIT(L, TRAIT_PROSOPAGNOSIA))
 			obscure_name = TRUE
-	var/apparent_species
-	if(dna?.species && !skipface)
-		apparent_species = ", \an [dna.species.name]"
-	. = list("<span class='info'>*---------*\nThis is <EM>[!obscure_name ? name : "Unknown"][apparent_species]</EM>!")
+
+	. = list("")
+
+	var/racetext
+	if (ishuman(user))
+		var/mob/living/carbon/human/human_user = user
+		if(human_user.skin_tone != skin_tone)
+			racetext = get_race_text()
+	. += "<span class='info'>Это же <EM>[!obscure_name ? name : "Неизвестный"]</EM>, [racetext ? "<big class='interface'>[racetext]</big>" : "[get_age_text()]"]!<hr>"
+
+	//head
+	if(head)
+		. += "На голове у н[t_ego] [head.get_examine_string(user)].\n"
+
+	//eyes
+	if(!(ITEM_SLOT_EYES in obscured))
+		if(glasses)
+			. += "Также на [t_na] [glasses.get_examine_string(user)].\n"
+		else if(eye_color == BLOODCULT_EYE && iscultist(src) && HAS_TRAIT(src, CULT_EYES))
+			. += "<span class='warning'><B>[t_His] eyes are glowing an unnatural red!</B></span>"
+
+	//ears
+	if(ears && !(ITEM_SLOT_EARS in obscured))
+		. += "В ушах у н[t_ego] есть [ears.get_examine_string(user)].\n"
+
+	//mask
+	if(wear_mask && !(ITEM_SLOT_MASK in obscured))
+		. += "На лице у н[t_ego] [wear_mask.get_examine_string(user)].\n"
+
+	//neck
+	if(wear_neck && !(ITEM_SLOT_NECK in obscured))
+		. += "На шее у н[t_ego] [wear_neck.get_examine_string(user)].\n"
+
+	//suit/armor
+	if(wear_suit)
+		. += "[t_He] [t_is] wearing [wear_suit.get_examine_string(user)]."
+		//suit/armor storage
+		if(s_store && !(ITEM_SLOT_SUITSTORE in obscured))
+			. += "[t_He] [t_is] carrying [s_store.get_examine_string(user)] on [t_his] [wear_suit.name]."
 
 	//uniform
 	if(w_uniform && !(ITEM_SLOT_ICLOTHING in obscured))
@@ -36,15 +71,7 @@
 				accessory_msg += " с [icon2html(U.attached_accessory, user)] [U.attached_accessory]"
 
 		. += "Одет[t_a] он[t_a] в [w_uniform.get_examine_string(user)][accessory_msg].\n"
-	//head
-	if(head)
-		. += "На голове у н[t_ego] [head.get_examine_string(user)].\n"
-	//suit/armor
-	if(wear_suit)
-		. += "[t_He] [t_is] wearing [wear_suit.get_examine_string(user)]."
-		//suit/armor storage
-		if(s_store && !(ITEM_SLOT_SUITSTORE in obscured))
-			. += "[t_He] [t_is] carrying [s_store.get_examine_string(user)] on [t_his] [wear_suit.name]."
+
 	//back
 	if(back)
 		. += "Со спины у н[t_ego] свисает [back.get_examine_string(user)].\n"
@@ -52,16 +79,17 @@
 	//Hands
 	for(var/obj/item/I in held_items)
 		if(!(I.item_flags & ABSTRACT))
-			. += "[t_He] [t_is] holding [I.get_examine_string(user)] in [t_his] [get_held_index_name(get_held_index_of_item(I))]."
+			. += "В [get_held_index_name(get_held_index_of_item(I))] он[t_a] держит [I.get_examine_string(user)].\n"
 
 	var/datum/component/forensics/FR = GetComponent(/datum/component/forensics)
+
 	//gloves
-//gloves
 	if(gloves && !(ITEM_SLOT_GLOVES in obscured))
 		. += "А на руках у н[t_ego] [gloves.get_examine_string(user)].\n"
 	else if(FR && length(FR.blood_DNA))
 		if(num_hands)
 			. += "<span class='warning'>[ru_ego(TRUE)] рук[num_hands > 1 ? "и" : "а"] также в крови!</span>\n"
+
 	//handcuffed?
 	if(handcuffed)
 		if(istype(handcuffed, /obj/item/restraints/handcuffs/cable))
@@ -71,33 +99,17 @@
 
 	//belt
 	if(belt)
-		. += "[t_He] [t_has] [belt.get_examine_string(user)] about [t_his] waist."
+		. += "И ещё на поясе у н[t_ego] [belt.get_examine_string(user)].\n"
 
 	//shoes
 	if(shoes && !(ITEM_SLOT_FEET in obscured))
-		. += "[t_He] [t_is] wearing [shoes.get_examine_string(user)] on [t_his] feet."
-
-	//mask
-	if(wear_mask && !(ITEM_SLOT_MASK in obscured))
-		. += "[t_He] [t_has] [wear_mask.get_examine_string(user)] on [t_his] face."
-
-	if(wear_neck && !(ITEM_SLOT_NECK in obscured))
-		. += "[t_He] [t_is] wearing [wear_neck.get_examine_string(user)] around [t_his] neck."
-
-	//eyes
-	if(!(ITEM_SLOT_EYES in obscured))
-		if(glasses)
-			. += "Также на [t_na] [glasses.get_examine_string(user)].\n"
-		else if(eye_color == BLOODCULT_EYE && iscultist(src) && HAS_TRAIT(src, CULT_EYES))
-			. += "<span class='warning'><B>[t_His] eyes are glowing an unnatural red!</B></span>"
-
-	//ears
-	if(ears && !(ITEM_SLOT_EARS in obscured))
-		. += "[t_He] [t_has] [ears.get_examine_string(user)] on [t_his] ears."
+		. += "А на [t_ego] ногах [shoes.get_examine_string(user)].\n"
 
 	//ID
 	if(wear_id)
-		. += "[t_He] [t_is] wearing [wear_id.get_examine_string(user)]."
+		. += "И конечно же у н[t_ego] есть [wear_id.get_examine_string(user)].\n"
+
+	. += "<hr>"
 
 	//Status effects
 	var/list/status_examines = status_effect_examines()
@@ -107,11 +119,11 @@
 	//Jitters
 	switch(jitteriness)
 		if(300 to INFINITY)
-			. += "<span class='warning'><B>[t_He] [t_is] convulsing violently!</B></span>"
+			. += "<span class='warning'><B>[t_on] бьётся в судорогах!</B></span>\n"
 		if(200 to 300)
-			. += "<span class='warning'>[t_He] [t_is] extremely jittery.</span>"
+			. += "<span class='warning'>[t_on] нервно дёргается.</span>\n"
 		if(100 to 200)
-			. += "<span class='warning'>[t_He] [t_is] twitching ever so slightly.</span>"
+			. += "<span class='warning'>[t_on] дрожит.</span>\n"
 
 	var/appears_dead = FALSE
 	var/just_sleeping = FALSE
@@ -146,7 +158,7 @@
 		. += "<span class='warning'><B>[t_His] [english_list(splinted_stuff)] [splinted_stuff.len > 1 ? "are" : "is"] splinted!</B></span>\n"
 
 	if(get_bodypart(BODY_ZONE_HEAD) && !getorgan(/obj/item/organ/brain))
-		. += "<span class='deadsay'>It appears that [t_his] brain is missing...</span>"
+		. += "<span class='deadsay'>Похоже, что у н[t_ego] нет мозга...</span>\n"
 
 	var/temp = getBruteLoss() //no need to calculate each of these twice
 
@@ -168,7 +180,7 @@
 		var/obj/item/bodypart/BP = X
 		var/damage_text
 		if(!(BP.get_damage(include_stamina = FALSE) >= BP.max_damage)) //Stamina is disabling the limb
-			damage_text = "limp and lifeless"
+			damage_text = "выглядит бледновато"
 		else
 			damage_text = (BP.brute_dam >= BP.burn_dam) ? BP.heavy_brute_msg : BP.heavy_burn_msg
 		msg += "<B>[capitalize(t_his)] [BP.name] is [damage_text]!</B>\n"
@@ -188,11 +200,11 @@
 		msg += "<B>[capitalize(t_his)] [parse_zone(t)] is missing!</B>\n"
 
 	if(l_limbs_missing >= 2 && r_limbs_missing == 0)
-		msg += "[t_He] look[p_s()] all right now.\n"
+		msg += "[t_on] стоит на правой части.\n"
 	else if(l_limbs_missing == 0 && r_limbs_missing >= 2)
-		msg += "[t_He] really keeps to the left.\n"
+		msg += "[t_on] стоит на левой части.\n"
 	else if(l_limbs_missing >= 2 && r_limbs_missing >= 2)
-		msg += "[t_He] [p_do()]n't seem all there.\n"
+		msg += "[t_on] выглядит как котлетка.\n"
 
 	for(var/obj/item/bodypart/BP as anything in bodyparts)
 		if(BP.limb_id != (dna.species.examine_limb_id ? dna.species.examine_limb_id : dna.species.id))
@@ -345,14 +357,14 @@
 	if(perpname && (HAS_TRAIT(user, TRAIT_SECURITY_HUD) || HAS_TRAIT(user, TRAIT_MEDICAL_HUD)))
 		var/datum/data/record/R = find_record("name", perpname, GLOB.data_core.general)
 		if(R)
-			. += "<span class='deptradio'>Rank:</span> [R.fields["rank"]]\n<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Front photo\]</a><a href='?src=[REF(src)];hud=1;photo_side=1'>\[Side photo\]</a>"
+			. += "<hr><span class='deptradio'>Должность:</span> [R.fields["rank"]]\n<a href='?src=[REF(src)];hud=1;photo_front=1'>\[Фото\]</a><a href='?src=[REF(src)];hud=1;photo_side=1'>\[Альт.\]</a>"
 		if(HAS_TRAIT(user, TRAIT_MEDICAL_HUD))
 			var/cyberimp_detect
 			for(var/obj/item/organ/cyberimp/CI in internal_organs)
 				if(CI.status == ORGAN_ROBOTIC && !CI.syndicate_implant)
 					cyberimp_detect += "[!cyberimp_detect ? "[CI.get_examine_string(user)]" : ", [CI.get_examine_string(user)]"]"
 			if(cyberimp_detect)
-				. += "<span class='notice ml-1'>Detected cybernetic modifications:</span>"
+				. += "<span class='notice ml-1'>Обнаружены кибернетические модификации:</span>"
 				. += "<span class='notice ml-2'>[cyberimp_detect]</span>"
 			if(R)
 				var/health_r = R.fields["p_stat"]
@@ -361,7 +373,7 @@
 				. += "<a href='?src=[REF(src)];hud=m;m_stat=1'>\[[health_r]\]</a>"
 			R = find_record("name", perpname, GLOB.data_core.medical)
 			if(R)
-				. += "<a href='?src=[REF(src)];hud=m;evaluation=1'>\[Medical evaluation\]</a><br>"
+				. += "<a href='?src=[REF(src)];hud=m;evaluation=1'>\[Медицинское заключение\]</a><br>"
 			if(traitstring)
 				. += "<span class='notice ml-1'>Detected physiological traits:</span>"
 				. += "<span class='notice ml-2'>[traitstring]</span>"
@@ -376,11 +388,11 @@
 					criminal = R.fields["criminal"]
 
 				. += "<span class='deptradio'>Criminal status:</span> <a href='?src=[REF(src)];hud=s;status=1'>\[[criminal]\]</a>"
-				. += jointext(list("<span class='deptradio'>Security record:</span> <a href='?src=[REF(src)];hud=s;view=1'>\[View\]</a>",
-					"<a href='?src=[REF(src)];hud=s;add_citation=1'>\[Add citation\]</a>",
-					"<a href='?src=[REF(src)];hud=s;add_crime=1'>\[Add crime\]</a>",
-					"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[View comment log\]</a>",
-					"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Add comment\]</a>"), "")
+				. += jointext(list("<span class='deptradio'>Заметки:</span> <a href='?src=[REF(src)];hud=s;view=1'>\[View\]</a>",
+					"<a href='?src=[REF(src)];hud=s;add_citation=1'>\[Добавить цитату\]</a>",
+					"<a href='?src=[REF(src)];hud=s;add_crime=1'>\[Добавить нарушениеe\]</a>",
+					"<a href='?src=[REF(src)];hud=s;view_comment=1'>\[Просмотреть комментарии\]</a>",
+					"<a href='?src=[REF(src)];hud=s;add_comment=1'>\[Добавить комментарий\]</a>"), "")
 	else if(isobserver(user) && traitstring)
 		. += "<span class='info'><b>Черты:</b> [traitstring]</span>"
 

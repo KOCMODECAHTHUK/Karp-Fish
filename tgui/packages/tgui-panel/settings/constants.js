@@ -7,11 +7,11 @@
 export const SETTINGS_TABS = [
   {
     id: 'general',
-    name: 'General',
+    name: 'Основное',
   },
   {
     id: 'chatPage',
-    name: 'Chat Tabs',
+    name: 'Вкладки',
   },
 ];
 
