@@ -59,7 +59,7 @@ export const MESSAGE_TYPES = [
     name: 'Радио',
     description: 'Все радиоканалы',
     selector:
-      '.alert, .minorannounce, .syndradio, .centcomradio, .aiprivradio, .comradio, .secradio, .gangradio, .engradio, .medradio, .sciradio, .suppradio, .servradio, .radio, .deptradio, .binarysay, .newscaster, .resonate',
+      '.alert, .minorannounce, .syndradio, .centcomradio, .aiprivradio, .comradio, .pirradio, .cmmradio, .irmgradio, .ntradio, .radio, .deptradio, .binarysay, .newscaster, .resonate',
   },
   {
     type: MESSAGE_TYPE_INFO,

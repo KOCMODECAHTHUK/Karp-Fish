@@ -15,7 +15,7 @@
 /obj/item/card
 	name = "карта"
 	desc = "Картует."
-	icon = 'whitesands/icons/obj/card.dmi' //WS Edit - Actually good-looking IDs >:)
+	icon = 'icons/obj/card.dmi'
 	w_class = WEIGHT_CLASS_TINY
 
 	var/list/files = list()
@@ -153,7 +153,6 @@
 	slot_flags = ITEM_SLOT_ID
 	armor = list("melee" = 0, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 100, "acid" = 100)
 	resistance_flags = FIRE_PROOF | ACID_PROOF
-	var/id_type_name = "identification card"
 	var/mining_points = 0 //For redeeming at mining equipment vendors
 	var/list/access = list()
 	var/list/ship_access = list()
@@ -165,11 +164,13 @@
 	var/uses_overlays = TRUE
 	var/icon/cached_flat_icon
 	var/registered_age = 13 // default age for ss13 players
+	var/job_icon
 
 /obj/item/card/id/Initialize(mapload)
 	. = ..()
 	if(mapload && access_txt)
 		access = text2access(access_txt)
+	update_label()
 	RegisterSignal(src, COMSIG_ATOM_UPDATED_ICON, .proc/update_in_wallet)
 
 /obj/item/card/id/Destroy()
@@ -345,9 +346,9 @@
 		msg += "Владелец карты имеет возраст <b>[registered_age]</b> лет. [(registered_age < AGE_MINOR) ? "Тут есть голографическая полоса, которая гласит <b><span class='danger'>'СТАЖИРОВКА: НЕ ПРОДАВАТЬ АЛКОГОЛЬ ИЛИ ТАБАК'</span></b> в самом низу карты." : ""]"
 	if(mining_points)
 		msg += "\nВау, здесь же есть [mining_points] шахтёрских очков на разные штуки из шахтёрского инвентаря."
-	if( length( ship_access ) )
+	if(length(ship_access))
 		var/list/ship_names = list()
-		for( var/datum/overmap/ship/controlled/ship in ship_access )
+		for(var/datum/overmap/ship/controlled/ship in ship_access)
 			ship_names += ship.name
 		msg += "Карта имеет доступ к следующим кораблям: [ship_names.Join(", ")]"
 	if(registered_account)
@@ -379,11 +380,10 @@
 	if(!uses_overlays)
 		return
 	cached_flat_icon = null
-	var/job = assignment ? ckey(GetJobName()) : null
 	if(registered_name && registered_name != "Captain")
 		. += mutable_appearance(icon, "assigned")
-	if(job)
-		. += mutable_appearance(icon, "id[job]")
+	if(job_icon)
+		. += mutable_appearance(icon, "id[job_icon]")
 
 /obj/item/card/id/proc/update_in_wallet()
 	SIGNAL_HANDLER
@@ -406,19 +406,19 @@
 	return ..()
 
 // Adds the referenced ship directly to the card
-/obj/item/card/id/proc/add_ship_access(datum/overmap/ship/controlled/ship )
-	if ( ship )
+/obj/item/card/id/proc/add_ship_access(datum/overmap/ship/controlled/ship)
+	if (ship)
 		ship_access += ship
 
 // Removes the referenced ship from the card
-/obj/item/card/id/proc/remove_ship_access(datum/overmap/ship/controlled/ship )
-	if ( ship )
+/obj/item/card/id/proc/remove_ship_access(datum/overmap/ship/controlled/ship)
+	if (ship)
 		ship_access -= ship
 
 // Finds the referenced ship in the list
-/obj/item/card/id/proc/has_ship_access(datum/overmap/ship/controlled/ship )
-	if ( ship )
-		return ship_access.Find( ship )
+/obj/item/card/id/proc/has_ship_access(datum/overmap/ship/controlled/ship)
+	if (ship)
+		return ship_access.Find(ship)
 
 /*
 Usage:
@@ -433,7 +433,6 @@ update_label()
 
 /obj/item/card/id/silver
 	name = "серебрянная ID-карта"
-	id_type_name = "silver identification card"
 	desc = "Серебряная карта, которая показывает честь и преданность делу."
 	icon_state = "silver"
 	item_state = "silver_id"
@@ -446,14 +445,12 @@ update_label()
 	access = list(ACCESS_CHANGE_IDS)
 
 /obj/item/card/id/silver/reaper
-	name = "Thirteen's ID Card (Reaper)"
 	access = list(ACCESS_MAINT_TUNNELS)
 	assignment = "Reaper"
 	registered_name = "Thirteen"
 
 /obj/item/card/id/gold
 	name = "золотая ID-карта"
-	id_type_name = "gold identification card"
 	desc = "Золотая карта, которая показывает силу и мощь."
 	icon_state = "gold"
 	item_state = "gold_id"
@@ -557,7 +554,6 @@ update_label()
 
 /obj/item/card/id/syndicate_command
 	name = "ID-карта синдиката"
-	id_type_name = "syndicate ID card"
 	desc = "Настоящая. Синдикатовская."
 	registered_name = "Syndicate"
 	assignment = "Syndicate Overlord"
@@ -567,49 +563,22 @@ update_label()
 	registered_age = null
 
 /obj/item/card/id/syndicate_command/crew_id
-	name = "ID-карта синдиката"
-	id_type_name = "syndicate ID card"
-	desc = "Настоящая. Синдикатовская."
-	registered_name = "Syndicate"
-	assignment = "Syndicate Operative"
-	icon_state = "syndie"
+	assignment = "Operative"
 	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS)
 	uses_overlays = FALSE
 
 /obj/item/card/id/syndicate_command/operative
-	name = "operative ID card"
-	id_type_name = "syndicate ID card"
-	desc = "An ID straight from the Syndicate."
-	registered_name = "Syndicate"
-	assignment = "Syndicate Operative"
-	icon_state = "syndie"
+	assignment = "Operative"
 	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS, ACCESS_ARMORY)
 	uses_overlays = FALSE
 
 /obj/item/card/id/syndicate_command/captain_id
-	name = "ID-карта капитана синдиката"
-	id_type_name = "syndicate captain ID card"
-	desc = "Настоящая. Синдикатовская."
-	registered_name = "Syndicate"
-	assignment = "Syndicate Ship Captain"
-	icon_state = "syndie"
+	assignment = "Captain"
 	access = list(ACCESS_SYNDICATE, ACCESS_ROBOTICS, ACCESS_ARMORY, ACCESS_SYNDICATE_LEADER)
 	uses_overlays = FALSE
 
-/obj/item/card/id/syndicate_command/crew_id
-	name = "ID-карта синдиката"
-	id_type_name = "syndicate ID card"
-	desc = "Настоящая. Синдикатовская."
-	registered_name = "Syndicate"
-	assignment = "Syndicate Operative"
-	icon_state = "syndie"
-	access = list(ACCESS_SYNDICATE)
-	uses_overlays = FALSE
-
 /obj/item/card/id/captains_spare
-	name = "запасная ID-карта капитана"
-	id_type_name = "captain's spare ID"
-	desc = "Запасная ID-карта самого Верховного Лорда."
+	desc = "The spare ID of the High Lord himself."
 	icon_state = "gold"
 	item_state = "gold_id"
 	lefthand_file = 'icons/mob/inhands/equipment/idcards_lefthand.dmi'
@@ -621,20 +590,19 @@ update_label()
 /obj/item/card/id/captains_spare/Initialize()
 	var/datum/job/captain/J = new/datum/job/captain
 	access = J.get_access()
-	add_ship_access( SSshuttle.get_ship( src ) )
+	add_ship_access(SSshuttle.get_ship(src))
 	. = ..()
 	update_label()
 
 /obj/item/card/id/captains_spare/update_label() //so it doesn't change to Captain's ID card (Captain) on a sneeze
 	if(registered_name == "Captain")
-		name = "[id_type_name][(!assignment || assignment == "Captain") ? "" : " ([ru_job_parse(assignment)])"]"
+		name = "[initial(name)][(!assignment || assignment == "Captain") ? "" : " ([ru_job_parse(assignment)])"]"
 		update_icon()
 	else
 		..()
 
 /obj/item/card/id/centcom
 	name = "\improper ID-карта ЦК"
-	id_type_name = "\improper CentCom ID"
 	desc = "Карта прямо из Центрального командования."
 	icon_state = "centcom"
 	registered_name = "Центральное Командование"
@@ -646,12 +614,11 @@ update_label()
 	access = get_all_centcom_access()
 	. = ..()
 
-/obj/item/card/id/centcom/has_ship_access(datum/overmap/ship/controlled/ship )
+/obj/item/card/id/centcom/has_ship_access(datum/overmap/ship/controlled/ship)
 	return TRUE
 
 /obj/item/card/id/ert
-	name = "ID-карта ЦК"
-	id_type_name = "CentCom ID"
+	name = "\improper ID-карта ЦК"
 	desc = "Карта офицера отряда быстрого реагирования."
 	icon_state = "ert_commander"
 	registered_name = "Emergency Response Team Commander"
@@ -719,7 +686,6 @@ update_label()
 
 /obj/item/card/id/ert/deathsquad
 	name = "\improper ОТРЯД СМЕРТИ"
-	id_type_name = "\improper Death Squad ID"
 	desc = "Карта офицера отряда смерти?"
 	icon_state = "deathsquad" //NO NO SIR DEATH SQUADS ARENT A PART OF NANOTRASEN AT ALL
 	registered_name = "Death Commando"
@@ -740,7 +706,6 @@ update_label()
 
 /obj/item/card/id/prisoner
 	name = "ID-карта заключённого"
-	id_type_name = "prisoner ID card"
 	desc = "Ты номер, ты не свободный человек."
 	icon_state = "orange"
 	item_state = "orange-id"
@@ -851,22 +816,21 @@ update_label()
 	name = "ID-карта бункера"
 
 /obj/item/card/id/solgov
-	name = "\improper SolGov Officer ID"
-	id_type_name = "\improper SolGov ID"
+	name = "\improper SolGov ID"
 	desc = "A SolGov ID with no proper access to speak of."
-	assignment = "SolGov Officer"
+	assignment = "Officer"
 	icon_state = "solgov"
 	uses_overlays = FALSE
 
 /obj/item/card/id/solgov/commander
-	name = "\improper SolGov Commander ID"
-	id_type_name = "\improper SolGov ID"
+	name = "\improper SolGov ID"
 	desc = "A SolGov ID with no proper access to speak of. This one indicates a Commander."
+	assignment = "Commander"
 
 /obj/item/card/id/solgov/elite
-	name = "\improper SolGov Elite ID"
-	id_type_name = "\improper SolGov ID"
+	name = "\improper SolGov ID"
 	desc = "A SolGov ID with no proper access to speak of. This one indicates an Elite."
+	assignment = "Elite"
 
 /obj/item/card/id/away/slime //We're ranchin, baby!
 	name = "\improper Slime Ranch access card"
