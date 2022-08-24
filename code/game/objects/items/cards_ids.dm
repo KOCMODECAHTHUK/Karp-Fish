@@ -353,10 +353,6 @@
 		msg += "Карта имеет доступ к следующим кораблям: [ship_names.Join(", ")]"
 	if(registered_account)
 		msg += "Привязанный аккаунт принадлежит '[registered_account.account_holder]' и сообщает о балансе в размере <b>[registered_account.account_balance] кредит[get_num_string(registered_account.account_balance)]</b>."
-		if(registered_account.account_job)
-			var/datum/bank_account/D = SSeconomy.get_dep_account(registered_account.account_job.paycheck_department)
-			if(D)
-				msg += "\nБаланс [D.account_holder] составляет <b>[D.account_balance] кредит[get_num_string(D.account_balance)]."
 		msg += span_info("\nАльт-Клик по ID-карте для снятия денег.")
 		msg += span_info("\nПохоже сюда можно вставлять голо-чипы, монетки и прочую валюту.")
 		if(registered_account.account_holder == user.real_name)
