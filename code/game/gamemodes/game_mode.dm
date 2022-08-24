@@ -269,9 +269,9 @@
 	return 0
 
 /datum/game_mode/proc/send_intercept()
-	var/intercepttext = "<b><i>Central Command Status Summary</i></b><hr>"
-	intercepttext += "<b>Central Command has intercepted and partially decoded a Syndicate transmission with vital information regarding their movements. The following report outlines the most \
-	likely threats to appear in your sector.</b>"
+	var/intercepttext = "<b><i>Отчёт Безопасности Центрального Командования</i></b><hr>"
+	intercepttext += "<b>ЦентКом перехватил частично зашифрованные переговоры Синдиката. В текущий отчёт войдут возможные угрозы \
+	с которыми вы можете столкнуться в секторе.</b>"
 	var/list/report_weights = config.mode_false_report_weight.Copy()
 	report_weights[report_type] = 0 //Prevent the current mode from being falsely selected.
 	var/list/reports = list()
@@ -291,13 +291,13 @@
 		intercepttext += report
 
 	if(station_goals.len)
-		intercepttext += "<hr><b>Special Orders for [station_name()]:</b>"
+		intercepttext += "<hr><b>Специальные указания для [station_name()]:</b>"
 		for(var/datum/station_goal/G in station_goals)
 			G.on_report()
 			intercepttext += G.get_report()
 
-	print_command_report(intercepttext, "Central Command Status Summary", announce=FALSE)
-	priority_announce("A summary has been copied and printed to all communications consoles.", "Enemy communication intercepted. Security level elevated.", 'sound/ai/intercept.ogg')
+	print_command_report(intercepttext, "Отчёт Безопасности Центрального Командования", announce=FALSE)
+	priority_announce("Сводная информация была скопирована и распечатана на всех коммуникационных консолях.", "Вражеская связь перехвачена. Уровень безопасности повышен.", 'sound/ai/intercept.ogg')
 	if(GLOB.security_level < SEC_LEVEL_BLUE)
 		set_security_level(SEC_LEVEL_BLUE)
 

@@ -27,7 +27,7 @@ export const Vent = (props, context) => {
         <Button
           icon={power ? 'power-off' : 'times'}
           selected={power}
-          content={power ? 'On' : 'Off'}
+          content={power ? 'ВКЛ' : 'ВЫКЛ'}
           onClick={() =>
             act('power', {
               id_tag,
@@ -38,10 +38,10 @@ export const Vent = (props, context) => {
       }
     >
       <LabeledList>
-        <LabeledList.Item label="Mode">
+        <LabeledList.Item label="Режим">
           <Button
             icon="sign-in-alt"
-            content={direction ? 'Pressurizing' : 'Scrubbing'}
+            content={direction ? 'Наполнение' : 'Откачка'}
             color={!direction && 'danger'}
             onClick={() =>
               act('direction', {
@@ -51,10 +51,10 @@ export const Vent = (props, context) => {
             }
           />
         </LabeledList.Item>
-        <LabeledList.Item label="Pressure Regulator">
+        <LabeledList.Item label="Регулятор давления">
           <Button
             icon="sign-in-alt"
-            content="Internal"
+            content="Внутренний"
             selected={incheck}
             onClick={() =>
               act('incheck', {
@@ -65,7 +65,7 @@ export const Vent = (props, context) => {
           />
           <Button
             icon="sign-out-alt"
-            content="External"
+            content="Внешний"
             selected={excheck}
             onClick={() =>
               act('excheck', {
@@ -76,10 +76,10 @@ export const Vent = (props, context) => {
           />
         </LabeledList.Item>
         {!!incheck && (
-          <LabeledList.Item label="Internal Target">
+          <LabeledList.Item label="Внутреннее целевое">
             <NumberInput
               value={Math.round(internal)}
-              unit="kPa"
+              unit="кПа"
               width="75px"
               minValue={0}
               step={10}
@@ -94,7 +94,7 @@ export const Vent = (props, context) => {
             <Button
               icon="undo"
               disabled={intdefault}
-              content="Reset"
+              content="Сбросить"
               onClick={() =>
                 act('reset_internal_pressure', {
                   id_tag,
@@ -104,10 +104,10 @@ export const Vent = (props, context) => {
           </LabeledList.Item>
         )}
         {!!excheck && (
-          <LabeledList.Item label="External Target">
+          <LabeledList.Item label="Внешнее целевое">
             <NumberInput
               value={Math.round(external)}
-              unit="kPa"
+              unit="кПа"
               width="75px"
               minValue={0}
               step={10}
@@ -122,7 +122,7 @@ export const Vent = (props, context) => {
             <Button
               icon="undo"
               disabled={extdefault}
-              content="Reset"
+              content="Сбросить"
               onClick={() =>
                 act('reset_external_pressure', {
                   id_tag,
@@ -148,7 +148,7 @@ export const Scrubber = (props, context) => {
       buttons={
         <Button
           icon={power ? 'power-off' : 'times'}
-          content={power ? 'On' : 'Off'}
+          content={power ? 'ВКЛ' : 'ВЫКЛ'}
           selected={power}
           onClick={() =>
             act('power', {
@@ -160,11 +160,11 @@ export const Scrubber = (props, context) => {
       }
     >
       <LabeledList>
-        <LabeledList.Item label="Mode">
+        <LabeledList.Item label="Режим">
           <Button
             icon={scrubbing ? 'filter' : 'sign-in-alt'}
             color={scrubbing || 'danger'}
-            content={scrubbing ? 'Scrubbing' : 'Siphoning'}
+            content={scrubbing ? 'Чистка' : 'Выкачивание'}
             onClick={() =>
               act('scrubbing', {
                 id_tag,
@@ -175,7 +175,7 @@ export const Scrubber = (props, context) => {
           <Button
             icon={widenet ? 'expand' : 'compress'}
             selected={widenet}
-            content={widenet ? 'Expanded range' : 'Normal range'}
+            content={widenet ? 'Расширенный радиус' : 'Обычный радиус'}
             onClick={() =>
               act('widenet', {
                 id_tag,
@@ -184,7 +184,7 @@ export const Scrubber = (props, context) => {
             }
           />
         </LabeledList.Item>
-        <LabeledList.Item label="Filters">
+        <LabeledList.Item label="Фильтры">
           {(scrubbing &&
             filter_types.map((filter) => (
               <Button

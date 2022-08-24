@@ -1,28 +1,28 @@
 {
-	"beginnings": [
-		"Star",
-		"Oort",
-		"Comet",
-		"Pulsar",
-		"Plasma",
-		"Void",
-		"Space",
-		"Solar",
-		"Laser",
-		"Ion"
-	],
-	"endings": [
-		"keel",
-		"beard",
-		"bilge",
-		"hull",
-		"hook",
-		"flag",
-		"deck",
-		"salt",
-		"knot",
-		"fish",
-		"helm"
-	],
-	"ship_names": ["Space Queen's Revenge", "Syndicate Privateer"]
+    "beginnings":[
+        "Звезда",
+        "Оорт",
+        "Комета",
+        "Пульсар",
+        "Плазма",
+        "Пустота",
+        "Космос",
+        "Солнечный",
+        "Лазер",
+        "Ион"
+    ],
+    "endings":[
+        "Киль",
+        "Борода",
+        "Трюм",
+        "Корпус",
+        "Крючок",
+        "Флаг",
+        "Палуба",
+        "Соль",
+        "узел",
+        "Рыба",
+        "Штурвал"
+    ],
+	"ship_names": ["Месть Космической Королевы", "Рядовой Синдиката"]
 }

@@ -186,7 +186,7 @@ window "infowindow"
 		text-color = #ffffff
 		background-color = #40628a
 		saved-params = "is-checked"
-		text = "Join Discord"
+		text = "Discord"
 		command = "discord"
 	elem "changelog"
 		type = BUTTON
@@ -210,7 +210,7 @@ window "infowindow"
 		text-color = #ffffff
 		background-color = #40628a
 		saved-params = "is-checked"
-		text = "Rules"
+		text = "Правила"
 		command = "rules"
 	elem "wiki"
 		type = BUTTON
@@ -222,20 +222,8 @@ window "infowindow"
 		text-color = #ffffff
 		background-color = #40628a
 		saved-params = "is-checked"
-		text = "Wiki"
+		text = "Вики"
 		command = "wiki"
-	elem "forum"
-		type = BUTTON
-		pos = 376,5
-		size = 80x20
-		anchor1 = 59,0
-		anchor2 = 71,0
-		font-family = "Verdana"
-		text-color = #ffffff
-		background-color = #40628a
-		saved-params = "is-checked"
-		text = "Forum"
-		command = "forum"
 	elem "github"
 		type = BUTTON
 		pos = 464,5
@@ -259,7 +247,7 @@ window "infowindow"
 		text-color = #ffffff
 		background-color = #40628a
 		saved-params = "is-checked"
-		text = "Report Issue"
+		text = "Баги?"
 		command = "report-issue"
 
 window "outputwindow"

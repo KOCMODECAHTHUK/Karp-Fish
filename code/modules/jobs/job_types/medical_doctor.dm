@@ -129,7 +129,7 @@
 	head = /obj/item/clothing/head/beret/solgov/terragov
 
 /datum/outfit/job/doctor/pirate
-	name = "Ship's Doctor (Pirate)"
+	name = "Судовой врач (Пират)"
 
 	uniform = /obj/item/clothing/under/costume/sailor
 	shoes = /obj/item/clothing/shoes/jackboots

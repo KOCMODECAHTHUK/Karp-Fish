@@ -6,7 +6,7 @@
 	required_players = 0
 
 	announce_span = "notice"
-	announce_text = "Just have fun and enjoy the game!"
+	announce_text = "Просто получайте удовольствие и наслаждайтесь игрой!"
 
 	title_icon = "shiptest"
 
@@ -14,7 +14,7 @@
 	return 1
 
 /datum/game_mode/extended/generate_report()
-	return "The transmission mostly failed to mention your sector. It is possible that there is nothing in the Syndicate that could threaten your station during this shift."
+	return "В передаче в основном не упоминается ваш сектор. Возможно, в Синдикате нет ничего, что могло бы угрожать вашей станции во время этой смены."
 
 /datum/game_mode/extended/announced
 	name = "extended"
@@ -28,4 +28,4 @@
 		G.on_report()
 
 /datum/game_mode/extended/announced/send_intercept(report = 0)
-	priority_announce("Thanks to the tireless efforts of our security and intelligence divisions, there are currently no credible threats to [station_name()]. All station construction projects have been authorized. Have a secure shift!", "Security Report", 'sound/ai/commandreport.ogg')
+	priority_announce("Благодаря неустанным усилиям наших подразделений безопасности и разведки, в настоящее время нет никаких реальных угроз для [station_name()]. Все проекты строительства на станции были утверждены. Удачной смены!", "Отчёт отдела безопасности", 'sound/ai/commandreport.ogg')

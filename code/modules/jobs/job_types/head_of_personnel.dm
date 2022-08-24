@@ -85,7 +85,7 @@
 	head = /obj/item/clothing/head/solgov/terragov
 
 /datum/outfit/job/head_of_personnel/pirate
-	name = "First Mate (Pirate)"
+	name = "First Mate (Пират)"
 	uniform = /obj/item/clothing/under/costume/russian_officer
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/pirate

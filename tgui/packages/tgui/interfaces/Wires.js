@@ -21,7 +21,7 @@ export const Wires = (props, context) => {
                 buttons={
                   <>
                     <Button
-                      content={wire.cut ? 'Mend' : 'Cut'}
+                      content={wire.cut ? 'Паять' : 'Кусать'}
                       onClick={() =>
                         act('cut', {
                           wire: wire.color,
@@ -29,7 +29,7 @@ export const Wires = (props, context) => {
                       }
                     />
                     <Button
-                      content="Pulse"
+                      content="Пульс"
                       onClick={() =>
                         act('pulse', {
                           wire: wire.color,
@@ -37,7 +37,7 @@ export const Wires = (props, context) => {
                       }
                     />
                     <Button
-                      content={wire.attached ? 'Detach' : 'Attach'}
+                      content={wire.attached ? 'Отсо.' : 'Прис.'}
                       onClick={() =>
                         act('attach', {
                           wire: wire.color,

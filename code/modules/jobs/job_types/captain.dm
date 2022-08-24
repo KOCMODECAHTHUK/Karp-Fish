@@ -75,7 +75,7 @@
 	suit = /obj/item/clothing/suit/toggle/solgov/terragov
 
 /datum/outfit/job/captain/pirate
-	name = "Captain (Pirate)"
+	name = "Captain (Пират)"
 	uniform = /obj/item/clothing/under/costume/russian_officer
 	shoes = /obj/item/clothing/shoes/jackboots
 	head = /obj/item/clothing/head/pirate/captain

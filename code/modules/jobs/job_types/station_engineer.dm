@@ -149,7 +149,7 @@
 	uniform = /obj/item/clothing/under/syndicate/camo
 
 /datum/outfit/job/engineer/pirate
-	name = "Ship's Engineer (Pirate)"
+	name = "Ship's Engineer (Пират)"
 
 	uniform = /obj/item/clothing/under/costume/sailor
 	head = /obj/item/clothing/head/bandana

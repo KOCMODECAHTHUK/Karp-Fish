@@ -3,7 +3,6 @@
 	var/t_He = p_they(TRUE)
 	var/t_His = p_their(TRUE)
 	var/t_his = p_their()
-	var/t_him = p_them()
 	var/t_has = p_have()
 	var/t_is = p_are()
 
@@ -33,33 +32,35 @@
 
 	//head
 	if(head)
-		. += "На голове у н[t_ego] [head.get_examine_string(user)].\n"
+		. += "На голове у н[t_ego] [head.get_examine_string(user)]."
 
 	//eyes
 	if(!(ITEM_SLOT_EYES in obscured))
 		if(glasses)
-			. += "Также на [t_na] [glasses.get_examine_string(user)].\n"
+			. += "Также на [t_na] [glasses.get_examine_string(user)]."
 		else if(eye_color == BLOODCULT_EYE && iscultist(src) && HAS_TRAIT(src, CULT_EYES))
-			. += "<span class='warning'><B>[t_His] eyes are glowing an unnatural red!</B></span>"
+			. += "<span class='warning'><B>[ru_ego(TRUE)] глаза ярко-красные и они горят!</B></span>"
 
 	//ears
 	if(ears && !(ITEM_SLOT_EARS in obscured))
-		. += "В ушах у н[t_ego] есть [ears.get_examine_string(user)].\n"
+		. += "В ушах у н[t_ego] есть [ears.get_examine_string(user)]."
 
 	//mask
 	if(wear_mask && !(ITEM_SLOT_MASK in obscured))
-		. += "На лице у н[t_ego] [wear_mask.get_examine_string(user)].\n"
+		. += "На лице у н[t_ego] [wear_mask.get_examine_string(user)]."
 
 	//neck
 	if(wear_neck && !(ITEM_SLOT_NECK in obscured))
-		. += "На шее у н[t_ego] [wear_neck.get_examine_string(user)].\n"
+		. += "На шее у н[t_ego] [wear_neck.get_examine_string(user)]."
 
 	//suit/armor
 	if(wear_suit)
-		. += "[t_He] [t_is] wearing [wear_suit.get_examine_string(user)]."
 		//suit/armor storage
-		if(s_store && !(ITEM_SLOT_SUITSTORE in obscured))
-			. += "[t_He] [t_is] carrying [s_store.get_examine_string(user)] on [t_his] [wear_suit.name]."
+		var/suit_thing
+		if(s_store && !(obscured & ITEM_SLOT_SUITSTORE))
+			suit_thing += " вместе с [s_store.get_examine_string(user)]"
+
+		. += "На [t_na] надет [wear_suit.get_examine_string(user)][suit_thing]."
 
 	//uniform
 	if(w_uniform && !(ITEM_SLOT_ICLOTHING in obscured))
@@ -70,44 +71,44 @@
 			if(U.attached_accessory)
 				accessory_msg += " с [icon2html(U.attached_accessory, user)] [U.attached_accessory]"
 
-		. += "Одет[t_a] он[t_a] в [w_uniform.get_examine_string(user)][accessory_msg].\n"
+		. += "Одет[t_a] он[t_a] в [w_uniform.get_examine_string(user)][accessory_msg]."
 
 	//back
 	if(back)
-		. += "Со спины у н[t_ego] свисает [back.get_examine_string(user)].\n"
+		. += "Со спины у н[t_ego] свисает [back.get_examine_string(user)]."
 
 	//Hands
 	for(var/obj/item/I in held_items)
 		if(!(I.item_flags & ABSTRACT))
-			. += "В [get_held_index_name(get_held_index_of_item(I))] он[t_a] держит [I.get_examine_string(user)].\n"
+			. += "В [get_held_index_name(get_held_index_of_item(I))] он[t_a] держит [I.get_examine_string(user)]."
 
 	var/datum/component/forensics/FR = GetComponent(/datum/component/forensics)
 
 	//gloves
 	if(gloves && !(ITEM_SLOT_GLOVES in obscured))
-		. += "А на руках у н[t_ego] [gloves.get_examine_string(user)].\n"
+		. += "А на руках у н[t_ego] [gloves.get_examine_string(user)]."
 	else if(FR && length(FR.blood_DNA))
 		if(num_hands)
-			. += "<span class='warning'>[ru_ego(TRUE)] рук[num_hands > 1 ? "и" : "а"] также в крови!</span>\n"
+			. += "<span class='warning'>[ru_ego(TRUE)] рук[num_hands > 1 ? "и" : "а"] также в крови!</span>"
 
 	//handcuffed?
 	if(handcuffed)
 		if(istype(handcuffed, /obj/item/restraints/handcuffs/cable))
-			. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] связан[t_a]!</span>\n"
+			. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] связан[t_a]!</span>"
 		else
-			. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] в наручниках!</span>\n"
+			. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] в наручниках!</span>"
 
 	//belt
 	if(belt)
-		. += "И ещё на поясе у н[t_ego] [belt.get_examine_string(user)].\n"
+		. += "И ещё на поясе у н[t_ego] [belt.get_examine_string(user)]."
 
 	//shoes
 	if(shoes && !(ITEM_SLOT_FEET in obscured))
-		. += "А на [t_ego] ногах [shoes.get_examine_string(user)].\n"
+		. += "А на [t_ego] ногах [shoes.get_examine_string(user)]."
 
 	//ID
 	if(wear_id)
-		. += "И конечно же у н[t_ego] есть [wear_id.get_examine_string(user)].\n"
+		. += "И конечно же у н[t_ego] есть [wear_id.get_examine_string(user)]."
 
 	. += "<hr>"
 
@@ -119,11 +120,11 @@
 	//Jitters
 	switch(jitteriness)
 		if(300 to INFINITY)
-			. += "<span class='warning'><B>[t_on] бьётся в судорогах!</B></span>\n"
+			. += "<span class='warning'><B>[t_on] бьётся в судорогах!</B></span>"
 		if(200 to 300)
-			. += "<span class='warning'>[t_on] нервно дёргается.</span>\n"
+			. += "<span class='warning'>[t_on] нервно дёргается.</span>"
 		if(100 to 200)
-			. += "<span class='warning'>[t_on] дрожит.</span>\n"
+			. += "<span class='warning'>[t_on] дрожит.</span>"
 
 	var/appears_dead = FALSE
 	var/just_sleeping = FALSE
@@ -139,14 +140,14 @@
 
 		if(!just_sleeping)
 			if(suiciding)
-				. += "<span class='warning'>[t_on] выглядит как суицидник... [t_ego] уже невозможно спасти.</span>\n"
+				. += "<span class='warning'>[t_on] выглядит как суицидник... [t_ego] уже невозможно спасти.</span>"
 			if(hellbound)
 				. += span_warning("[t_ego] душа выглядит вырванной из [t_ego] тела. Воскрешение невозможно.")
 			. += ""
 			if(getorgan(/obj/item/organ/brain) && !key && !get_ghost(FALSE, TRUE))
-				. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life and [t_his] soul has departed...</span>"
+				. += "<span class='deadsay'>[t_on] не реагирует на происходящее вокруг; нет признаков жизни и души...</span>"
 			else
-				. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive; there are no signs of life...</span>"
+				. += "<span class='deadsay'>[t_on] не реагирует на происходящее вокруг; нет признаков жизни...</span>"
 
 //WSStaion Begin - Broken Bones
 
@@ -190,14 +191,14 @@
 	var/r_limbs_missing = 0
 	for(var/t in missing)
 		if(t==BODY_ZONE_HEAD)
-			msg += "<span class='deadsay'><B>[t_His] [parse_zone(t)] is missing!</B><span class='warning'>\n"
+			msg += "<span class='deadsay'><B>[ru_ego(TRUE)] [ru_exam_parse_zone(parse_zone(t))] отсутствует!</B></span>\n"
 			continue
 		if(t == BODY_ZONE_L_ARM || t == BODY_ZONE_L_LEG)
 			l_limbs_missing++
 		else if(t == BODY_ZONE_R_ARM || t == BODY_ZONE_R_LEG)
 			r_limbs_missing++
 
-		msg += "<B>[capitalize(t_his)] [parse_zone(t)] is missing!</B>\n"
+		msg += "<span class='warning'><B>[ru_ego(TRUE)] [ru_exam_parse_zone(parse_zone(t))] отсутствует!</B></span>\n"
 
 	if(l_limbs_missing >= 2 && r_limbs_missing == 0)
 		msg += "[t_on] стоит на правой части.\n"
@@ -266,15 +267,15 @@
 		msg += "[ru_ego(TRUE)] кожа бледная.\n"
 
 	if(bleedsuppress)
-		msg += "[t_He] [t_is] bandaged with something.\n"
+		msg += "[t_on] чем-то перевязан.\n"
 	else if(bleed_rate)
 		if(reagents.has_reagent(/datum/reagent/toxin/heparin, needs_metabolizing = TRUE))
-			msg += "<b>[t_He] [t_is] bleeding uncontrollably!</b>\n"
+			msg += "<b>У н[t_ego] неконтролируемое кровотечение!</b>\n"
 		else
-			msg += "<B>[t_He] [t_is] bleeding!</B>\n"
+			msg += "<B>[t_on] истекает кровью!</B>\n"
 
 	if(reagents.has_reagent(/datum/reagent/teslium, needs_metabolizing = TRUE))
-		msg += "[t_He] [t_is] emitting a gentle blue glow!\n"
+		msg += "[t_on] излучающий нежно-голубое свечение!\n"
 
 	if(islist(stun_absorption))
 		for(var/i in stun_absorption)
@@ -282,7 +283,7 @@
 				msg += "[t_He] [t_is][stun_absorption[i]["examine_message"]]\n"
 
 	if(just_sleeping)
-		msg += "[t_He] [t_is]n't responding to anything around [t_him] and seem[p_s()] to be asleep.\n"
+		msg += "[t_on] не реагирует ни на что вокруг и, кажется спит.\n"
 
 	if(!appears_dead)
 		if(drunkenness && !skipface) //Drunkenness
@@ -310,17 +311,17 @@
 					msg += "[t_on] выглядит болезненно.\n"
 				var/datum/component/mood/mood = src.GetComponent(/datum/component/mood)
 				if(mood.sanity <= SANITY_DISTURBED)
-					msg += "[t_He] seem[p_s()] distressed.\n"
+					msg += "[t_on] выглядит расстроенным."
 					SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "empath", /datum/mood_event/sad_empath, src)
 				if (is_blind())
-					msg += "[t_He] appear[p_s()] to be staring off into space.\n"
+					msg += "[t_on] смотрит в пустоту.\n"
 				if (HAS_TRAIT(src, TRAIT_DEAF))
-					msg += "[t_He] appear[p_s()] to not be responding to noises.\n"
+					msg += "[t_on] не реагирует на шум.\n"
 
 			msg += "</span>"
 
 			if(HAS_TRAIT(user, TRAIT_SPIRITUAL) && mind?.holy_role)
-				msg += "[t_He] [t_has] a holy aura about [t_him].\n"
+				msg += "От н[t_ego] исходит святая аура.\n"
 				SEND_SIGNAL(user, COMSIG_ADD_MOOD_EVENT, "religious_comfort", /datum/mood_event/religiously_comforted)
 
 		switch(stat)
@@ -341,11 +342,11 @@
 
 	switch(mothdust) //WS edit - moth dust from hugging
 		if(1 to 50)
-			. += "[t_He] [t_is] a little dusty."
+			. += "[t_on] немного пыльный."
 		if(51 to 150)
-			. += "[t_He] [t_has] a layer of shimmering dust on [t_him]."
+			. += "[t_on] покрыт слоем сверкающей пыли."
 		if(151 to INFINITY)
-			. += "<b>[t_He] [t_is] covered in glistening dust!</b>" //End WS edit
+			. += "<b>[t_on] покрыт сверкающей пылью!</b>" //End WS edit
 
 	var/trait_exam = common_trait_examine()
 	if (!isnull(trait_exam))
@@ -397,14 +398,14 @@
 		. += "<span class='info'><b>Черты:</b> [traitstring]</span>"
 
 	//No flavor text unless the face can be seen. Prevents certain metagaming with impersonation.
-	var/invisible_man = skipface || get_visible_name() == "Unknown"
+	var/invisible_man = skipface || get_visible_name() == "Неизвестный"
 	if(invisible_man)
 		. += "...?"
 	else
 		var/flavor = print_flavor_text()
 		if(flavor)
 			. += flavor
-	. += "*---------*</span>"
+	. += "</span>"
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)
 

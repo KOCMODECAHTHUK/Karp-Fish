@@ -1,132 +1,100 @@
 {
-	"suspicion": [
-		"@pick(add_name)I'm watching you...",
-		"@pick(add_name)I know what you're doing",
-		"@pick(add_name)what are you hiding?",
-		"I saw that",
-		"Don't think that we don't know",
-		"Everyone knows it was you",
-		"Have anything you care to explain?",
-		"Whats in your pockets?"
-	],
+    "suspicion": [
+        "@pick(add_name)я смотрю за тобой...",
+        "@pick(add_name)я знаю что ты делаешь",
+        "@pick(add_name)что ты прячешь?",
+        "Я видел это"
+    ],
 
-	"conversation": [
-		"Yes",
-		"Yeah",
-		"Yup",
-		"No",
-		"Nah",
-		"I doubt it",
-		"Uh...",
-		"Why?",
-		"But...",
-		"Hold on",
-		"How are you",
-		"Are you sure",
-		"You alright?",
-		"Hmm",
-		"Yeah, I know",
-		"Weird"
-	],
+    "conversation": [
+        "Да",
+        "Ага",
+        "Угу",
+        "Нет",
+        "Неа",
+        "Сомневаюсь",
+        "Эм.",
+        "Почему?",
+        "Но.",
+        "Подожди",
+        "Ну-ка",
+        "Хм",
+        "Ага, я знаю",
+        "Я в курсе, да",
+        "Странновато",
+        "Странно"
+    ],
 
-	"greetings": [
-		"Hey,",
-		"Hi",
-		"What's up",
-		"How're you",
-		"Heya",
-		"Hiya",
-		"Wassup",
-		"How have you been",
-		"How's it going",
-		"Good to see you",
-		"Oh jeez",
-		"Longtime no see",
-		"It's been a while",
-		"Heyyy",
-		"Ahoy",
-		"What's crackin",
-		"Howdy",
-		"What's happening",
-		"What's the story",
-		"Hello",
-		"Wait,",
-		"It's"
-	],
+    "greetings": [
+        "",
+        "Здарова, ",
+        "Дарова, ",
+        "Привет, ",
+        "Здравствуй, ",
+        "Подожди, ",
+        "Это "
+    ],
 
-	"getout": [
-		"@pick(add_name)get out",
-		"@pick(add_name)get out!",
-		"@pick(add_name)go away",
-		"@pick(add_name)fuck off",
-		"@pick(add_name)leave",
-		"@pick(add_name)go out the airlock",
-		"@pick(add_name)get off this ship right now",
-		"Get off this ship right now",
+    "getout": [
+        "@pick(add_name)убирайся",
+        "@pick(add_name)убирайся!",
+        "@pick(add_name)уходи",
+        "@pick(add_name)отъебись",
+        "@pick(add_name)вали",
+        "@pick(add_name)свали отсюда",
+        "УШЕЛ!",
+        "@pick(add_name)уходи!"
+    ],
 
-		"OUT!",
-		"@pick(add_name)out!"
-	],
+    "weird": [
+        "Кчцк-Чкцк? Кччцк!",
+        "Кчцкчк...",
+        "ЕЕЕееееЕЕЕЕ",
+        "Кххххх",
+        "#@?*&?",
+        "П***ги мн*",
+        "Х-ххххх..."
+    ],
 
-	"weird": [
-		"Kchck-Chkck? Kchchck!",
-		"Kchckchk...",
-		"EEEeeeeEEEE",
-		"khhhhh",
-		"#@§*&£",
-		"%*[@#",
-		"77 65 65 64",
-		"Snyert",
-		"Gawwa Gawwa",
-		"FWWWWWEEEEEEE",
-		"They're inside the sun",
-		"Tweetweetweetweet",
-		"You will die on December 31th, 2503 at 23:54",
-		"Greep greep greep greep greep greep",
-		"Sneeert",
-		"Phhbbbbtb Phbbbt",
-		"Hhhehhhehhhheeeeee",
-		"Snibby",
-		"Grrrrr",
-		"SNraGgrh",
-		"H-hhhhh..."
-	],
+    "didyouhearthat": [
+        "Ты слышал?",
+        "Ты видел?",
+        "Что это было?"
+    ],
 
-	"didyouhearthat": [
-		"I think I heard something",
-		"Did you hear that?",
-		"Did you see that?",
-		"What was that?",
-		"Did you just hear that?",
-		"Am I crazy or did you hear that too?",
-		"Am I crazy or did you see that too?",
-		"I think there's someting below us",
-		"I think there's something above us",
-		"I think there's something in the pipes",
-		"Did you just hear something in the pipes?",
-		"I swear I just heard something from beneath the floor"
-	],
+    "add_name": [
+        "%TARGETNAME%, ",
+        ""
+    ],
 
-	"add_name": ["%TARGETNAME%, ", "%TARGETNAME% ", ""],
+    "doubt": [
+        "Почему?",
+        "Что?",
+        "Подожди, что?",
+        "@pick(add_name)подожди-ка",
+        "@pick(add_name)подожди",
+        "@pick(add_name)минуту",
+        "Э-эм..."
+    ],
 
-	"doubt": [
-		"Why?",
-		"What?",
-		"Wait, what?",
-		"@pick(add_name)wait",
-		"@pick(add_name)hold on",
-		"Uh..."
-	],
-
-	"aggressive": [
-		"@pick(add_name)give me that!",
-		"@pick(add_name)stop it!",
-		"@pick(add_name)I'm going to kill you!",
-		"@pick(add_name)fuck you!",
-		"@pick(add_name)drop that right now",
-		"@pick(add_name)if you keep doing that I will kill you",
-		"@pick(add_name)I'll break your fingers if you don't stop"
-	],
+    "aggressive": [
+        "@pick(add_name)верни это!",
+        "@pick(add_name)прекращай",
+        "@pick(add_name)я убью тебя",
+        "@pick(add_name)тебе пизда",
+        "@pick(add_name)тебе пиздец",
+        "@pick(add_name)тебе конец",
+        "@pick(add_name)пошел нахуй!",
+        "@pick(add_name)пошел нахуй",
+        "@pick(add_name)иди нахуй",
+        "@pick(add_name)иди нахуй!",
+        "@pick(add_name)где ты?",
+        "@pick(add_name)ты тварь",
+        "@pick(add_name)урод!",
+        "@pick(add_name)я найду тебя",
+        "@pick(add_name)я знаю, где ты",
+        "@pick(add_name)я иду за тобой"
+    ],
 
 	"threat": [
 		"execute",
@@ -222,22 +190,19 @@
 
 	],
 
-	"people": [
-		"the Captain",
-		"security",
-		"the scientist",
-		"the doctor",
-		"the medic",
-		"the crew",
-		"the other crew",
-		"the assistant",
-		"the other ship",
-		"the janitor",
-		"the miner",
-		"%TARGETNAME%",
-		"%TARGETNAME%",
-		"%TARGETNAME%"
-	],
+    "people": [
+        "Капитан",
+        "ХоС",
+        "СМО",
+        "РД",
+        "СЕ",
+        "ХоП",
+        "Уборщик",
+        "ИИ",
+        "Вирусолог",
+        "КМ",
+        "%TARGETNAME%"
+    ],
 
 	"accusations": [
 		"dead",
@@ -342,5 +307,5 @@
 		"Energy",
 		"?????"
 	]
-  
+
 }

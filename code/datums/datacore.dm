@@ -165,12 +165,12 @@
 				if (rank == "Captain" || (department != "Command" && (rank in GLOB.command_positions)))
 					manifest_out[department] = list(list(
 						"name" = name,
-						"rank" = rank
+						"rank" = ru_job_parse(rank)
 					)) + manifest_out[department]
 				else
 					manifest_out[department] += list(list(
 						"name" = name,
-						"rank" = rank
+						"rank" = ru_job_parse(rank)
 					))
 				has_department = TRUE
 		if(!has_department)
@@ -178,7 +178,7 @@
 				manifest_out["Misc"] = list()
 			manifest_out["Misc"] += list(list(
 				"name" = name,
-				"rank" = rank
+				"rank" = ru_job_parse(rank)
 			))
 	return manifest_out
 
@@ -202,7 +202,7 @@
 		var/even = FALSE
 		for(var/entry in entries)
 			var/list/entry_list = entry
-			dat += "<tr[even ? " class='alt'" : ""]><td>[entry_list["name"]]</td><td>[entry_list["rank"]]</td></tr>"
+			dat += "<tr[even ? " class='alt'" : ""]><td>[entry_list["name"]]</td><td>[ru_job_parse(entry_list["rank"])]</td></tr>"
 			even = !even
 
 	dat += "</table>"

@@ -1,36 +1,33 @@
 /mob/living/carbon/examine(mob/user)
-	var/t_He = p_they(TRUE)
-	var/t_His = p_their(TRUE)
-	var/t_his = p_their()
-	var/t_him = p_them()
-	var/t_has = p_have()
-	var/t_is = p_are()
+	var/t_on 	= ru_who(TRUE)
+	var/t_ego 	= ru_ego()
+	var/t_a 	= ru_a()
 
-	. = list("<span class='info'>*---------*\nThis is [icon2html(src, user)] \a <EM>[src]</EM>!")
+	. = list("<span class='info'>Это же [icon2html(src, user)] <EM>[src]</EM>!<hr>")
 	var/list/obscured = check_obscured_slots()
 
 	if (handcuffed)
-		. += "<span class='warning'>[t_He] [t_is] [icon2html(handcuffed, user)] handcuffed!</span>"
+		. += "<span class='warning'>[t_on] [icon2html(handcuffed, user)] в наручниках!</span>\n"
 	if (head)
-		. += "[t_He] [t_is] wearing [head.get_examine_string(user)] on [t_his] head. "
-	if(wear_mask && !(ITEM_SLOT_MASK in obscured))
-		. += "[t_He] [t_is] wearing [wear_mask.get_examine_string(user)] on [t_his] face."
-	if(wear_neck && !(ITEM_SLOT_NECK in obscured))
-		. += "[t_He] [t_is] wearing [wear_neck.get_examine_string(user)] around [t_his] neck."
+		. += "На голове у н[t_ego] [head.get_examine_string(user)].\n"
+	if(wear_mask && !(obscured & ITEM_SLOT_MASK))
+		. += "На [t_ego] лице [wear_mask.get_examine_string(user)].\n"
+	if(wear_neck && !(obscured & ITEM_SLOT_NECK))
+		. += "На шее у н[t_ego] [wear_neck.get_examine_string(user)].\n"
 
 	for(var/obj/item/I in held_items)
 		if(!(I.item_flags & ABSTRACT))
-			. += "[t_He] [t_is] holding [I.get_examine_string(user)] in [t_his] [get_held_index_name(get_held_index_of_item(I))]."
+			. += "В [t_ego] [get_held_index_name(get_held_index_of_item(I))] он[t_a] держит [I.get_examine_string(user)].\n"
 
 	if (back)
-		. += "[t_He] [t_has] [back.get_examine_string(user)] on [t_his] back."
+		. += "На [t_ego] спине [back.get_examine_string(user)].\n"
 	var/appears_dead = 0
 	if (stat == DEAD)
 		appears_dead = 1
 		if(getorgan(/obj/item/organ/brain))
-			. += "<span class='deadsay'>[t_He] [t_is] limp and unresponsive, with no signs of life.</span>"
+			. += "<span class='deadsay'>[t_on] не реагирует на происходящее вокруг; нет признаков жизни...</span>\n"
 		else if(get_bodypart(BODY_ZONE_HEAD))
-			. += "<span class='deadsay'>It appears that [t_his] brain is missing...</span>"
+			. += "<span class='deadsay'>Похоже, что у н[t_ego] нет мозга...</span>\n"
 
 	var/list/msg = list("<span class='warning'>")
 	var/list/missing = list(BODY_ZONE_HEAD, BODY_ZONE_CHEST, BODY_ZONE_R_ARM, BODY_ZONE_L_ARM, BODY_ZONE_R_LEG, BODY_ZONE_L_LEG)
@@ -41,64 +38,68 @@
 		missing -= BP.body_zone
 		for(var/obj/item/I in BP.embedded_objects)
 			if(I.isEmbedHarmless())
-				msg += "<B>[t_He] [t_has] \a [icon2html(I, user)] [I] stuck to [t_his] [BP.name]!</B>\n"
+				msg += "<B>Из [t_ego] [BP.name] торчит [icon2html(I, user)] [I]!</B>\n"
 			else
-				msg += "<B>[t_He] [t_has] \a [icon2html(I, user)] [I] embedded in [t_his] [BP.name]!</B>\n"
+				msg += "<B>У н[t_ego] застрял [icon2html(I, user)] [I] в [BP.name]!</B>\n"
 
 	for(var/X in disabled)
 		var/obj/item/bodypart/BP = X
 		var/damage_text
 		if(!(BP.get_damage(include_stamina = FALSE) >= BP.max_damage)) //Stamina is disabling the limb
-			damage_text = "limp and lifeless"
+			damage_text = "вялая"
 		else
 			damage_text = (BP.brute_dam >= BP.burn_dam) ? BP.heavy_brute_msg : BP.heavy_burn_msg
-		msg += "<B>[capitalize(t_his)] [BP.name] is [damage_text]!</B>\n"
+		msg += "<B>[capitalize(t_ego)] [BP.name] [damage_text]!</B>\n"
 
 	for(var/t in missing)
 		if(t==BODY_ZONE_HEAD)
-			msg += "<span class='deadsay'><B>[t_His] [parse_zone(t)] is missing!</B></span>\n"
+			msg += "<span class='deadsay'><B>[ru_ego(TRUE)] [parse_zone(t)] отсутствует!</B></span>\n"
 			continue
-		msg += "<span class='warning'><B>[t_His] [parse_zone(t)] is missing!</B></span>\n"
+		msg += "<span class='warning'><B>[ru_ego(TRUE)] [parse_zone(t)] отсутствует!</B></span>\n"
 
 
 	var/temp = getBruteLoss()
 	if(!(user == src && src.hal_screwyhud == SCREWYHUD_HEALTHY)) //fake healthy
 		if(temp)
 			if (temp < 25)
-				msg += "[t_He] [t_has] minor bruising.\n"
+				msg += "[t_on] имеет незначительные ушибы.\n"
 			else if (temp < 50)
-				msg += "[t_He] [t_has] <b>moderate</b> bruising!\n"
+				msg += "[t_on] <b>весьма серьезно</b> ранен[t_a]!\n"
+			else if (temp < 75)
+				msg += "[t_on] <b>тяжело</b> ранен[t_a]!\n"
 			else
-				msg += "<B>[t_He] [t_has] severe bruising!</B>\n"
+				msg += "<B>[t_on] смертельно ранен[t_a]!</B>\n"
 
 		temp = getFireLoss()
 		if(temp)
 			if (temp < 25)
-				msg += "[t_He] [t_has] minor burns.\n"
+				msg += "[t_on] немного подгорел[t_a].\n"
 			else if (temp < 50)
-				msg += "[t_He] [t_has] <b>moderate</b> burns!\n"
+				msg += "[t_on] имеет <b>серьёзные</b> ожоги!\n"
+			else if (temp < 75)
+				msg += "[t_on] имеет <b>тяжелые</b> ожоги!\n"
 			else
-				msg += "<B>[t_He] [t_has] severe burns!</B>\n"
+				msg += "<B>[t_on] имеет смертельные ожоги!</B>\n"
 
 		temp = getCloneLoss()
 		if(temp)
 			if(temp < 25)
-				msg += "[t_He] [t_is] slightly deformed.\n"
-			else if (temp < 50)
-				msg += "[t_He] [t_is] <b>moderately</b> deformed!\n"
+				msg += "[t_on] имеет незначительные подтёки на теле.\n"
+			else if(temp < 50)
+				msg += "[t_on] имеет <b>обвисшую</b> кожу на большей части тела!\n"
 			else
-				msg += "<b>[t_He] [t_is] severely deformed!</b>\n"
+				msg += "<b>[t_on] имеет тело состоящее из кусков свисающей плоти!</b>\n"
 
 	if(HAS_TRAIT(src, TRAIT_DUMB))
-		msg += "[t_He] seem[p_s()] to be clumsy and unable to think.\n"
+		msg += "[t_on] имеет глупое выражение лица.\n"
 
 	if(fire_stacks > 0)
-		msg += "[t_He] [t_is] covered in something flammable.\n"
+		msg += "[t_on] в чем-то горючем.\n"
 	if(fire_stacks < 0)
-		msg += "[t_He] look[p_s()] a little soaked.\n"
+		msg += "[t_on] выглядит мокро.\n"
 
-	if(pulledby && pulledby.grab_state)
-		msg += "[t_He] [t_is] restrained by [pulledby]'s grip.\n"
+	if(pulledby?.grab_state)
+		msg += "[t_on] удерживается захватом [pulledby].\n"
 
 	msg += "</span>"
 
@@ -107,9 +108,9 @@
 	if(!appears_dead)
 		switch(stat)
 			if(SOFT_CRIT)
-				. += "[t_His] breathing is shallow and labored."
+				. += "[t_on] вот-вот потеряет сознание.\n"
 			if(UNCONSCIOUS, HARD_CRIT)
-				. += "[t_He] [t_is]n't responding to anything around [t_him] and seems to be asleep."
+				. += "[t_on] без сознания.\n"
 
 	var/trait_exam = common_trait_examine()
 	if (!isnull(trait_exam))
@@ -119,26 +120,27 @@
 	if(mood)
 		switch(mood.shown_mood)
 			if(-INFINITY to MOOD_LEVEL_SAD4)
-				. += "[t_He] look[p_s()] depressed."
+				. += "[t_on] выглядит убито, будто сейчас расплачется."
 			if(MOOD_LEVEL_SAD4 to MOOD_LEVEL_SAD3)
-				. += "[t_He] look[p_s()] very sad."
+				. += "[t_on] выглядит расстроено."
 			if(MOOD_LEVEL_SAD3 to MOOD_LEVEL_SAD2)
-				. += "[t_He] look[p_s()] a bit down."
+				. += "[t_on] выглядит немного не в себе."
 			if(MOOD_LEVEL_HAPPY2 to MOOD_LEVEL_HAPPY3)
-				. += "[t_He] look[p_s()] quite happy."
+				. += "[t_on] выглядит немного на веселе."
 			if(MOOD_LEVEL_HAPPY3 to MOOD_LEVEL_HAPPY4)
-				. += "[t_He] look[p_s()] very happy."
+				. += "[t_on] выглядит очень весело."
 			if(MOOD_LEVEL_HAPPY4 to INFINITY)
-				. += "[t_He] look[p_s()] ecstatic."
+				. += "[t_on] в экстазе."
+	. += "</span>"
 
 	switch(mothdust) //WS edit - moth dust from hugging
 		if(1 to 50)
-			. += "[t_He] [t_is] a little dusty."
+			. += "[t_on] немного запылился."
 		if(51 to 150)
-			. += "[t_He] [t_has] a layer of shimmering dust on them."
+			. += "[t_on] покрыт слоем мерцающей пыли"
 		if(151 to INFINITY)
-			. += "[t_He] [t_is] covered in glistening dust!" //End WS edit
+			. += "[t_on] покрыт сверкающей пылью!" //End WS edit
 
-	. += "*---------*</span>"
+	. += "</span>"
 
 	SEND_SIGNAL(src, COMSIG_PARENT_EXAMINE, user, .)

@@ -1,5 +1,5 @@
 /proc/power_failure(z_level)
-	priority_announce("As a maintenance measure, power will be shut off for an indeterminate duration.", "Power Systems Maintenance", 'sound/ai/poweroff.ogg', zlevel = z_level)
+	priority_announce("Аномальная активность обнаружена энергосетях [station_name()]. В качестве меры предосторожности энергия будет отключена на неопределенный срок.", "Критический сбой питания", zlevel = z_level)
 	for(var/obj/machinery/power/smes/S in GLOB.machines)
 		if(istype(get_area(S), /area/ship/science/ai_chamber) || (z_level && S.virtual_z() != z_level))
 			continue
@@ -30,7 +30,7 @@
 		C.cell.charge = 0
 
 /proc/power_restore(z_level)
-	priority_announce("Power has been restored. We apologize for the inconvenience.", "Power Systems Nominal", 'sound/ai/poweron.ogg', zlevel = z_level)
+	priority_announce("Электроэнергия восстановлена на [station_name()]. Приносим свои извинения за доставленные неудобства.", "Электропитание стабилизировано", 'sound/ai/poweron.ogg', zlevel = z_level)
 	for(var/obj/machinery/power/apc/C in GLOB.machines)
 		if(!C.cell || (z_level && C.virtual_z() != z_level))
 			continue
@@ -54,7 +54,7 @@
 			A.power_change()
 
 /proc/power_restore_quick()
-	priority_announce("All SMESs have been recharged. We apologize for the inconvenience.", "Power Systems Nominal", 'sound/ai/poweron.ogg')
+	priority_announce("Все СНМЭ на станции [station_name()] были заряжены нашей электромагнитной установкой. Приносим свои извинения за доставленные неудобства.", "Электропитание стабилизировано", 'sound/ai/poweron.ogg')
 	for(var/obj/machinery/power/smes/S in GLOB.machines)
 		S.charge = S.capacity
 		S.output_level = S.output_level_max

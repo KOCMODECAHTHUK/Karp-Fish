@@ -69,7 +69,7 @@
 	if(SSticker.current_state <= GAME_STATE_PREGAME)
 		switch(ready)
 			if(PLAYER_NOT_READY)
-				output += "<p>\[ <b>Не готов</b> | [LINKIFY_READY("Наблюдать", PLAYER_READY_TO_OBSERVE)] \]</p>"
+				output += "<p>\[ <b>Подожди</b> | [LINKIFY_READY("Наблюдать", PLAYER_READY_TO_OBSERVE)] \]</p>"
 			if(PLAYER_READY_TO_PLAY)
 				output += "<p>\[ [LINKIFY_READY("Не готов", PLAYER_NOT_READY)] | [LINKIFY_READY("Наблюдать", PLAYER_READY_TO_OBSERVE)] \]</p>"
 			if(PLAYER_READY_TO_OBSERVE)
@@ -428,7 +428,7 @@
 				return LateChoices()
 		did_application = TRUE
 
-	var/datum/job/selected_job = job_choices[tgui_input_list(src, "Select job.", "Добро пожаловать, [client.prefs.real_name].", job_choices)]
+	var/datum/job/selected_job = job_choices[tgui_input_list(src, "Выберите должность.", "Добро пожаловать, [client.prefs.real_name].", job_choices)]
 	if(!selected_job)
 		return LateChoices() //Send them back to shuttle selection
 

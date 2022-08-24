@@ -428,7 +428,7 @@ update_label()
 
 /obj/item/card/id/proc/update_label()
 	var/blank = !registered_name
-	name = "[blank ? id_type_name : "[registered_name]'s ID Card"][(!assignment) ? "" : " ([assignment])"]"
+	name = "[blank ? initial(name) : "ID-карта [registered_name]"][(!assignment) ? "" : " ([ru_job_parse(assignment)])"]"
 	update_icon()
 
 /obj/item/card/id/silver
@@ -627,7 +627,7 @@ update_label()
 
 /obj/item/card/id/captains_spare/update_label() //so it doesn't change to Captain's ID card (Captain) on a sneeze
 	if(registered_name == "Captain")
-		name = "[id_type_name][(!assignment || assignment == "Captain") ? "" : " ([assignment])"]"
+		name = "[id_type_name][(!assignment || assignment == "Captain") ? "" : " ([ru_job_parse(assignment)])"]"
 		update_icon()
 	else
 		..()
@@ -650,8 +650,8 @@ update_label()
 	return TRUE
 
 /obj/item/card/id/ert
-	name = "\improper ID-карта ЦК"
-	id_type_name = "\improper CentCom ID"
+	name = "ID-карта ЦК"
+	id_type_name = "CentCom ID"
 	desc = "Карта офицера отряда быстрого реагирования."
 	icon_state = "ert_commander"
 	registered_name = "Emergency Response Team Commander"

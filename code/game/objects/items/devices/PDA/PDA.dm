@@ -140,7 +140,7 @@ GLOBAL_LIST_EMPTY(PDAs)
 			equipped = TRUE
 
 /obj/item/pda/proc/update_label()
-	name = "PDA-[owner] ([ownjob])" //Name generalisation
+	name = "ПДА-[owner] ([ru_job_parse(ownjob)])" //Name generalisation
 
 /obj/item/pda/GetAccess()
 	if(id)
@@ -232,10 +232,10 @@ GLOBAL_LIST_EMPTY(PDAs)
 		switch (mode)
 			if(0)
 				dat += "<h2>PERSONAL DATA ASSISTANT v.1.2</h2>"
-				dat += "Owner: [owner], [ownjob]<br>"
+				dat += "Owner: [owner], [ru_job_parse(ownjob)]<br>"
 
 				if(id)
-					dat += text("ID: <A href='?src=[REF(src)];choice=Authenticate'>[id ? "[id.registered_name], [id.assignment]" : "----------"]   <a href='?src=[REF(src)];choice=UpdateInfo'>[id ? "Update PDA Info" : ""]</a><br><br>")
+					dat += text("ID: <A href='?src=[REF(src)];choice=Authenticate'>[id ? "[id.registered_name], [ru_job_parse(id.assignment)]" : "----------"]   <a href='?src=[REF(src)];choice=UpdateInfo'>[id ? "Update PDA Info" : ""]</a><br><br>")
 
 				dat += "[worldtime2text()]<br>" //:[world.time / 100 % 6][world.time / 100 % 10]"
 				dat += "[time2text(world.realtime, "MMM DD")] [GLOB.year_integer+540]"

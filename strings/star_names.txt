@@ -1,108 +1,108 @@
-Aaru
-Abaddon
-Acheron
-Aelurus
-Aether
-Al Nar
-Amon
-An
-Anzu
-Archibald's Star
-Ashtoreth
-Asmoday
-Asphodel
-Atahsaya
-Azathoth
-Baal
-Baraq
-Bel
-Berith
-Black Emperor
-Blost
-Buyan
-Cadmus
-Chax
-Dagon
-Dalar's Star
-Damar's Star
-Dantalion
-Dis
-Diyu
-Durer's Star
-Eisheth
-Enki
-Erlig
-Fearsome Engine
-Freyja
-Gaap
-Genbu
-Gingolx
-Gualichu
-Haddu
-Hera
-Hul
-Ishkur
-Ishtar
-Jahannam
-Jahim
-Jannah
-Jigoku
-Jotunheim
-Khthon
-Kigatilik
-Komarov
-Kroni
-Lamya
-Leng
-Lilith
-Maan-Emo
-Maderakka
-Mam
-Mangindusa
-Marax
-Mnemosyne
-Mokosh
-Moloch
-Morganna
-Murmur
-Myrkheim
-Naacal
-Neter-hkertet
-Oberon
-Okeus
-Orobas
-Pandemonium
-Pontus
-Qilin
-Rama
-Samael
-Sawal
-Smok
-Stella Vitae
-Stribog
-Surasa
-Svarog
-Swang
-Tartarus
-Thanatos
-The Incineration
-Thrial
-Tiamat
-Togar
-Tragedy
-Ulgan
-Ulubis
-Utopia
-Valefar
-Weaver
-World Mill
-Wotan
-Xaphan
-Xezbeth
-Yaqum
-Yaw
-Zenerre
-Zenobia
-Zhu Que
-Zirnitra
-Zmey
+Аару
+Абаддон
+Ахерон
+Аэлурус
+Эфир
+Аль Нар
+Амон
+Ан
+Анзу
+Звезда Арчибальда
+Ашторет
+Асмодей
+Асфодель
+Атахсая
+Азатот
+Баал
+Барак
+Бел
+Берит
+Черный император
+Блост
+Буян
+Кадмус
+Чакс
+Дагон
+Звезда Далара
+Звезда Дамара
+Данталион
+Дис
+Дию
+Звезда Дюрера
+Эйшет
+Энки
+Эрлиг
+Страшный двигатель
+Фрейя
+Гаап
+Генбу
+Гинголкс
+Гуаличу
+Хадду
+Гера
+Хул
+Ишкур
+Иштар
+Джаханнам
+Джахим
+Джанна
+Джигоку
+Йотунхейм
+Хтон
+Кигатилик
+Комаров
+Крони
+Ламья
+Ленг
+Лилит
+Маан-Эмо
+Мадеракка
+Мам
+Мангиндуса
+Маракс
+Мнемозина
+Мокошь
+Молох
+Морганна
+Мурмур
+Миркхейм
+Наакаль
+Нетер-Хкертет
+Оберон
+Океус
+Оробас
+Пандемониум
+Понтус
+Цилинь
+Рама
+Самаэль
+Савал
+Дым
+Стелла Витаэ
+Стрибог
+Сураса
+Сварог
+Сван
+Тартар
+Танатос
+Испепеление
+Триал
+Тиамат
+Тогар
+Трагедия
+Улган
+Улубис
+Утопия
+Валефар
+Ткач
+Мировая мельница
+Вотан
+Ксафан
+Ксезбет
+Якум
+Яу
+Зенерре
+Зенобия
+Чжу Цюэ
+Зирнитра
+Змей
