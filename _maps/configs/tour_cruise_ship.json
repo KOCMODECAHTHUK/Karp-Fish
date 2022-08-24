@@ -6,26 +6,26 @@
 	"map_path": "_maps/shuttles/shiptest/tour_cruise_ship.dmm",
 	"map_id": "tour_cruise_ship",
 	"job_slots": {
-		"Captain": 1,
-		"Cruise Director": {
+		"Капитан": 1,
+		"Директор круиза": {
 			"outfit": "/datum/outfit/job/head_of_personnel",
 			"slots": 1
 		},
-		"Security Officer": 2,
-		"Medical Doctor": 1,
-		"Ship Engineer": {
+		"Офицер": 2,
+		"Врач": 1,
+		"Корабельный Инженер": {
 			"outfit": "/datum/outfit/job/atmos",
 			"slots": 1
 		},
-		"Bartender": 1,
-		"Cook": 1,
-		"Botanist": 1,
-		"Curator": 1,
-		"Chaplain": 1,
-		"Janitor": 1,
-		"Clown": 1,
-		"Mime": 1,
-		"Passenger": {
+		"Бармен": 1,
+		"Повар": 1,
+		"Ботаник": 1,
+		"Куратор": 1,
+		"Капеллан": 1,
+		"Уборщик": 1,
+		"Клоун": 1,
+		"Мим": 1,
+		"Пассажир": {
 			"outfit": "/datum/outfit/job/assistant/corporate",
 			"slots": 10
 		}

@@ -6,10 +6,10 @@
 	"map_path": "_maps/shuttles/shiptest/synapsev2.dmm",
 	"map_id": "ntsv_synapse",
 	"job_slots": {
-		"Chief Medical Officer": 1,
-		"Virologist": 2,
-		"Chemist": 1,
-		"Medical Doctor": 2
+		"Главный Врач": 1,
+		"Вирусолог": 2,
+		"Химик": 1,
+		"Врач": 2
 	},
 	"cost": 150
 }

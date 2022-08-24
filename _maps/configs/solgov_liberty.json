@@ -4,29 +4,29 @@
 	"map_path": "_maps/shuttles/shiptest/solgov_liberty.dmm",
 	"map_id": "liberty",
 	"job_slots": {
-		"Captain": {
+		"Капитан": {
 			"outfit": "/datum/outfit/job/captain/solgov",
 			"officer": true,
 			"slots": 1
 		},
-		"Executive Officer": {
+		"Начальник Штаба": {
 			"outfit": "/datum/outfit/job/head_of_personnel/solgov",
 			"officer": true,
 			"slots": 1
 		},
-		"Marine": {
+		"Морпех": {
 			"outfit": "/datum/outfit/job/security/solgov/elite",
 			"slots": 3
 		},
-		"Brig Officer": {
+		"Офицер Брига": {
 			"outfit": "/datum/outfit/job/warden/solgov",
 			"slots": 1
 		},
-		"Combat Medic": {
+		"Боевой медик": {
 			"outfit": "/datum/outfit/job/paramedic/solgov",
 			"slots": 1
 		},
-		"Sailor": {
+		"Матрос": {
 			"outfit": "/datum/outfit/job/assistant/solgov",
 			"slots": 4
 		}

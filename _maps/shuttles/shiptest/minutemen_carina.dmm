@@ -350,8 +350,8 @@
 /area/ship/hallway/central)
 "eJ" = (
 /obj/structure/closet/secure_closet{
-	icon_door = "warden";
-	icon_state = "warden";
+	icon_door = "Надзиратель";
+	icon_state = "Надзиратель";
 	name = "armorer's locker";
 	req_access_txt = "3"
 	},

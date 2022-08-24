@@ -4,29 +4,29 @@
 	"map_path": "_maps/shuttles/shiptest/starfury_class.dmm",
 	"map_id": "starfury_class",
 	"job_slots": {
-		"Captain": {
+		"Капитан": {
 			"outfit": "/datum/outfit/syndicate_empty/sbc/assault/captain",
 			"officer": true,
 			"slots": 1
 		},
-		"Operative": {
+		"Оперативник": {
 			"outfit": "/datum/outfit/syndicate_empty/sbc/assault/operative",
 			"officer": true,
 			"slots": 1
 		},
-		"Medic": {
+		"Медик": {
 			"outfit": "/datum/outfit/syndicate_empty/sbc/med",
 			"slots": 2
 		},
-		"Mechanic": {
+		"Механик": {
 			"outfit": "/datum/outfit/syndicate_empty/sbc/engi",
 			"slots": 2
 		},
-		"Trooper": {
+		"Солдат": {
 			"outfit": "/datum/outfit/syndicate_empty/sbc/assault",
 			"slots": 5
 		},
-		"Deck Assistant": {
+		"Помощник палубы": {
 			"outfit": "/datum/outfit/syndicate_empty/sbc",
 			"slots": 2
 		}

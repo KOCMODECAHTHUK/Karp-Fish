@@ -6,12 +6,12 @@
 	"map_path": "_maps/shuttles/shiptest/tranq.dmm",
 	"map_id": "tranq",
 	"job_slots": {
-		"Captain": {
+		"Капитан": {
 			"outfit": "/datum/outfit/job/captain/western",
 			"officer": true,
 			"slots": 1
 		},
-		"Scholar": {
+		"Ученый": {
 			"outfit": "/datum/outfit/job/curator/librarian",
 			"slots": 1
 		},

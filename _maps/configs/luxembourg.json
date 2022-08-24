@@ -4,12 +4,12 @@
 	"map_path": "_maps/shuttles/shiptest/syndicate_luxembourg.dmm",
 	"map_id": "syndicate_luxembourg",
 	"job_slots": {
-		"Quartermaster": 1,
-		"Cargo Technician": 2,
-		"Station Engineer": 1,
-		"Assistant": 3,
-		"Bartender": 1,
-		"Medical Doctor": 1
+		"Квартирмейстер": 1,
+		"Грузчик:": 2,
+		"Инженер": 1,
+		"Ассистент": 3,
+		"Бармен": 1,
+		"Врач": 1
 	},
 	"cost": 600
 }

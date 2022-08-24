@@ -5,7 +5,7 @@
 	"map_id": "hightide",
 	"limit": 2,
 	"job_slots": {
-		"Assistant": 8
+		"Ассистент": 8
 	},
 	"cost": 400
 }

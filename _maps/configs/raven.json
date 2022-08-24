@@ -4,27 +4,27 @@
 	"map_path": "_maps/shuttles/shiptest/nanotrasen_raven.dmm",
 	"map_id": "nanotrasen_raven",
 	"job_slots": {
-		"Captain": 1,
-		"Head of Security": {
+		"Капитан": 1,
+		"Начальник Охраны": {
 			"outfit": "/datum/outfit/job/hos/nanotrasen",
 			"officer": true,
 			"slots": 1
 		},
-		"Chief Medical Officer": 1,
-		"Head of Personnel": 1,
-		"Chief Engineer": 1,
-		"Engineer": {
+		"Главный Врач": 1,
+		"Глава Персонала": 1,
+		"Старший Инженер": 1,
+		"Инженер": {
 			"outfit": "/datum/outfit/job/engineer/nt",
 			"slots": 1
 		},
-		"Security Officer": {
+		"Офицер": {
 			"outfit": "/datum/outfit/job/security/nanotrasen",
 			"slots": 1
 		},
-		"Shaft Miner": 1,
-		"Medical Doctor": 1,
-		"Cargo Technician": 1,
-		"Assistant": 3
+		"Шахтер": 1,
+		"Врач": 1,
+		"Грузчик:": 1,
+		"Ассистент": 3
 	},
 	"cost": 650
 }

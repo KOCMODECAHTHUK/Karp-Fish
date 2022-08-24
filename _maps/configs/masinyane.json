@@ -6,16 +6,16 @@
 	"map_path": "_maps/shuttles/shiptest/masinyane.dmm",
 	"map_id": "masinyane",
 	"job_slots": {
-		"Private Ship Owner": {
+		"Частный Судовладелец": {
 			"outfit": "/datum/outfit/job/captain/independent/owner",
 			"officer": true,
 			"slots": 1
 		},
-		"Ship Engineer": {
+		"Корабельный Инженер": {
 			"outfit": "/datum/outfit/job/engineer/independent/ship_engineer",
 			"slots": 1
 		},
-		"Crewmate": {
+		"Член экипажа": {
 			"outfit": "/datum/outfit/job/assistant/independent/crewmatefancy",
 			"slots": 1
 		}

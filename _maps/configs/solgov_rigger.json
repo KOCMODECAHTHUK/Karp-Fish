@@ -4,35 +4,35 @@
 	"map_path": "_maps/shuttles/shiptest/rigger_t.dmm",
 	"map_id": "rigger_b",
 	"job_slots": {
-		"Captain": {
+		"Капитан": {
 			"outfit": "/datum/outfit/job/captain/solgov",
 			"officer": true,
 			"slots": 1
 		},
-		"Executive Officer": {
+		"Начальник Штаба": {
 			"outfit": "/datum/outfit/job/head_of_personnel/solgov",
 			"officer": true,
 			"slots": 1
 		},
-		"Signal Officer": {
+		"Офицер связи": {
 			"outfit": "/datum/outfit/job/solgov",
 			"officer": true,
 			"slots": 1
 		},
-		"Naval Surgeon": {
+		"Военно-морской хирург": {
 			"outfit": "/datum/outfit/job/doctor/solgov",
 			"slots": 1
 		},
-		"Machinist": {
+		"Машинист": {
 			"outfit": "/datum/outfit/job/engineer/solgov",
 			"slots": 2
 		},
-		"Field Engineer": {
+		"Полевой инженер": {
 			"outfit": "/datum/outfit/job/miner/solgov",
 			"slots": 2
 		},
-		"Cook": 1,
-		"Brig Officer": {
+		"Повар": 1,
+		"Офицер Брига": {
 			"outfit": "/datum/outfit/job/warden/solgov",
 			"slots": 1
 		},
@@ -40,7 +40,7 @@
 			"outfit": "/datum/outfit/job/security/solgov",
 			"slots": 2
 		},
-		"Sailor": {
+		"Матрос": {
 			"outfit": "/datum/outfit/job/assistant/solgov",
 			"slots": 4
 		}

@@ -4,15 +4,15 @@
 	"map_path": "_maps/shuttles/shiptest/solgov_cricket.dmm",
 	"map_id": "solgov_cricket",
 	"job_slots": {
-		"Captain": 1,
-		"SolGov Representative": 1,
-		"Chemist": 1,
-		"Station Engineer": 2,
-		"Shaft Miner": 2,
-		"Cargo Technician": 1,
-		"Security Officer": 1,
-		"Cook": 1,
-		"Assistant": 3
+		"Капитан": 1,
+		"Представитель КПСС": 1,
+		"Химик": 1,
+		"Инженер": 2,
+		"Шахтер": 2,
+		"Грузчик:": 1,
+		"Офицер": 1,
+		"Повар": 1,
+		"Ассистент": 3
 	},
 	"cost": 780
 }

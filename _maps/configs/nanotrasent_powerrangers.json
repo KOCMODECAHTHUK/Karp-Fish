@@ -13,7 +13,7 @@
 			"officer": true,
 			"slots": 1
 		},
-		"Commissioner": {
+		"Комиссар": {
 			"outfit": "/datum/outfit/job/lp/commissioner",
 			"slots": 1
 		},
@@ -29,19 +29,19 @@
 			"outfit": "/datum/outfit/job/lp/medic",
 			"slots": 1
 		},
-		"Medical Doctor": {
+		"Врач": {
 			"outfit": "/datum/outfit/job/doctor/lp",
 			"slots": 1
 		},
-		"Bartender": {
+		"Бармен": {
 			"outfit": "/datum/outfit/job/bartender/lp",
 			"slots": 1
 		},
-		"Researcher": {
+		"Исследователь": {
 			"outfit": "/datum/outfit/job/scientist/lp",
 			"slots": 2
 		},
-		"Miner": {
+		"Шахтер": {
 			"outfit": "/datum/outfit/job/miner/lp",
 			"slots": 2
 		}

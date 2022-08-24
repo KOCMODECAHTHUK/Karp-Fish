@@ -4,11 +4,11 @@
 	"map_path": "_maps/shuttles/shiptest/diy.dmm",
 	"map_id": "byo_a",
 	"job_slots": {
-		"Architect": {
+		"Архитектор": {
 			"outfit": "/datum/outfit/job/engineer/hazard",
 			"slots": 1
 		},
-		"Maso-Mechanic": {
+		"Мазо-механик": {
 			"outfit": "/datum/outfit/job/engineer/hazard",
 			"slots": 4
 		}

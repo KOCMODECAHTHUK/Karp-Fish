@@ -4,13 +4,13 @@
 	"map_path": "_maps/shuttles/shiptest/golem_ship.dmm",
 	"map_id": "golem_ship",
 	"job_slots": {
-		"Captain": 1,
-		"Head of Personnel": 1,
-		"Medical Doctor": 2,
-		"Station Engineer": 3,
-		"Shaft Miner": 2,
-		"Cargo Technician": 2,
-		"Security Officer": 1,
-		"Assistant": 5
+		"Капитан": 1,
+		"Глава Персонала": 1,
+		"Врач": 2,
+		"Инженер": 3,
+		"Шахтер": 2,
+		"Грузчик:": 2,
+		"Офицер": 1,
+		"Ассистент": 5
 	}
 }

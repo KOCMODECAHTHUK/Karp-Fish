@@ -4,12 +4,12 @@
 	"map_path": "_maps/shuttles/shiptest/scrapperb.dmm",
 	"map_id": "scrapper-b",
 	"job_slots": {
-		"Captain": 1,
-		"Research Director": 1,
-		"Scientist": 5,
-		"Shaft Miner": 3,
-		"Station Engineer": 3,
-		"Assistant": 3
+		"Капитан": 1,
+		"Научный Руководитель": 1,
+		"Ученый": 5,
+		"Шахтер": 3,
+		"Инженер": 3,
+		"Ассистент": 3
 	},
 	"cost": 750
 }

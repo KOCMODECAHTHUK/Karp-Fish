@@ -5,45 +5,45 @@
 	"map_id": "metis",
 	"limit": 2,
 	"job_slots": {
-		"Extraterrestrial Exploratory Project Supervisor": {
+		"Руководитель Проекта по Внеземным Исследованиям": {
 			"outfit": "/datum/outfit/job/rd",
 			"officer": true,
 			"slots": 1
 		},
-		"Invertebrate Xenofauna Morphology Analyst": {
+		"Аналитик Морфологии Ксенофауны Беспозвоночных": {
 			"outfit": "/datum/outfit/job/scientist/xenobiologist",
 			"slots": 1
 		},
-		"Hostile Planetary Exobiologist": {
+		"Экзобиолог Враждебной Фауны": {
 			"outfit": "/datum/outfit/job/scientist/xenobiologist/fauna",
 			"slots": 1
 		},
 
-		"Mechatronic Hydraulics Calibration Engineer": {
+		"Инженер по Калибровке Мехатронной Гидравлики": {
 			"outfit": "/datum/outfit/job/roboticist/mechatronicengineer",
 			"slots": 1
 		},
-		"Positronic Reliability Technician": {
+		"Техник по Надежности Позитроники": {
 			"outfit": "/datum/outfit/job/roboticist/biomechanicalengineer",
 			"slots": 1
 		},
-		"Ionic Dynamo Engineer": {
+		"Инженер Ионной Динамо-машины": {
 			"outfit": "/datum/outfit/job/roboticist/engineer",
 			"slots": 1
 		},
-		"Percussive Acquisitions-Focused Minerologist": {
+		"Минералог, ориентированный на ударные приобретения": {
 			"outfit": "/datum/outfit/job/miner/scientist",
 			"slots": 1
 		},
-		"Mechanosynthesis Specialist": {
+		"Специалист по Механосинтезу": {
 			"outfit": "/datum/outfit/job/scientist/naniteresearcher",
 			"slots": 1
 		},
-		"Plasmic Pyrolysis Researcher": {
+		"Исследователь Плазменного Пиролиза": {
 			"outfit": "/datum/outfit/job/scientist/seniorscientist",
 			"slots": 1
 		},
-		"Fiberboard Containment Inspector": {
+		"Инспектор по контейнерам из древесноволокнистых плит": {
 			"outfit": "/datum/outfit/job/scientist/juniorscientist",
 			"slots": 1
 		},

@@ -5,7 +5,7 @@
 	"map_id": "cargotide",
 	"limit": 2,
 	"job_slots": {
-		"Assistant": 6
+		"Ассистент": 6
 	},
 	"cost": 350
 }

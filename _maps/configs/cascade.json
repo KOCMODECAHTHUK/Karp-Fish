@@ -6,25 +6,25 @@
 	"map_path": "_maps/shuttles/shiptest/Syndicate_Cascade.dmm",
 	"map_id": "Syndicate_Cascade",
 	"job_slots": {
-		"Medical Professor": {
+		"Профессор медицины": {
 			"outfit": "/datum/outfit/job/cmo/syndicate/nsv",
 			"officer": true,
 			"slots": 1
 		},
-		"Medical Student": {
+		"Студент-медик": {
 			"outfit": "/datum/outfit/job/doctor/syndicate/nsv",
 			"slots": 2
 		},
-		"Quartermaster": 1,
-		"Deck Assistant": {
+		"Квартирмейстер": 1,
+		"Помощник палубы": {
 			"outfit": "/datum/outfit/syndicate_empty/sbc",
 			"slots": 3
 		},
-		"Union Engineer": {
+		"Профсоюзный инженер": {
 			"outfit": "/datum/outfit/job/engineer/gec",
 			"slots": 1
 		},
-		"Paramedic": {
+		"Парамедик": {
 			"outfit": "/datum/outfit/job/paramedic/syndicate/gorlex",
 			"slots": 1
 		}

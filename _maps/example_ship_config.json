@@ -17,7 +17,7 @@
 			"outfit": "/datum/outfit/job",
 			"slots": 2
 		},
-		"Assistant": 3
+		"Ассистент": 3
 	},
 	"cost": 99999999
 }

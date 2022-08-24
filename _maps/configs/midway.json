@@ -6,21 +6,21 @@
 	"map_path": "_maps/shuttles/shiptest/whiteship_midway.dmm",
 	"map_id": "whiteship_midway",
 	"job_slots": {
-		"Chief Engineer": 1,
-		"Asteroid Miner": {
+		"Старший Инженер": 1,
+		"Шахтер астероида": {
 			"outfit": "/datum/outfit/job/miner/hazard",
 			"slots": 1
 		},
-		"Ship's Physician": {
+		"Корабельный Врач": {
 			"outfit": "/datum/outfit/job/paramedic/traumateam",
 			"slots": 1
 		},
-		"Ship's Engineer": {
+		"Судовой Инженер": {
 			"outfit": "/datum/outfit/job/engineer/hazard",
 			"slots": 2
 		},
-		"Atmospheric Technician": 2,
-		"Junior Engineer": {
+		"Атмосферный Техник": 2,
+		"Младший инженер": {
 			"outfit": "/datum/outfit/job/engineer/juniorengineer",
 			"slots": 2
 		}

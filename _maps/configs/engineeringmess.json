@@ -8,28 +8,28 @@
 	"map_id": "engineeringmess",
 	"limit": 1,
 	"job_slots": {
-		"Chief at Engineering": {
+		"Старший Инженер": {
 			"outfit": "/datum/outfit/job/ce",
 			"officer": true,
 			"slots": 1
 		},
-		"Chief at Boozineering": {
+		"Алкобарон": {
 			"outfit": "/datum/outfit/job/bartender",
 			"slots": 1
 		},
-		"Engineering Specialist": {
+		"Инженер-специалист": {
 			"outfit": "/datum/outfit/job/engineer",
 			"slots": 2
 		},
-		"Atmospheric Specialist": {
+		"Специалист-атмосферник": {
 			"outfit": "/datum/outfit/job/atmos",
 			"slots": 2
 		},
-		"Medical Specialist": {
+		"Медицинский специалист": {
 			"outfit": "/datum/outfit/job/doctor",
 			"slots": 1
 		},
-		"Mining Specialist": {
+		"Специалист по горному делу": {
 			"outfit": "/datum/outfit/job/miner",
 			"slots": 2
 		}

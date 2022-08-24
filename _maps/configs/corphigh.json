@@ -5,27 +5,27 @@
 	"map_id": "corp_high",
 	"limit": 2,
 	"job_slots": {
-		"Chief Executive Officer": {
+		"Главный Исполнительный Директор": {
 			"outfit": "/datum/outfit/job/captain/corporate",
 			"officer": true,
 			"slots": 1
 		},
-		"Chief Supply Officer": {
+		"Главный Специалист по Снабжению": {
 			"outfit": "/datum/outfit/job/quartermaster/supplychief",
 			"officer": true,
 			"slots": 1
 		},
-		"Corporate Security": {
+		"Корпоративная Охрана": {
 			"outfit": "/datum/outfit/job/security/corporate",
 			"officer": false,
 			"slots": 2
 		},
-		"Contracted Engineer": {
+		"Инженер по Контракту": {
 			"outfit": "/datum/outfit/job/engineer/corporate",
 			"officer": false,
 			"slots": 2
 		},
-		"Business Associate": {
+		"Деловой Партнер": {
 			"outfit": "/datum/outfit/job/assistant/corporate",
 			"officer": false,
 			"slots": 4

@@ -2532,8 +2532,8 @@
 "gw" = (
 /obj/effect/mob_spawn/human/doctor{
 	brute_damage = 145;
-	id_job = "Geneticist";
-	name = "Geneticist";
+	id_job = "Генетик";
+	name = "Генетик";
 	oxy_damage = 55;
 	suit = /obj/item/clothing/suit/toggle/labcoat/genetics;
 	uniform = /obj/item/clothing/under/rank/medical/geneticist
@@ -3361,8 +3361,8 @@
 "in" = (
 /obj/effect/mob_spawn/human/doctor{
 	brute_damage = 145;
-	id_job = "Geneticist";
-	name = "Geneticist";
+	id_job = "Генетик";
+	name = "Генетик";
 	oxy_damage = 55;
 	suit = /obj/item/clothing/suit/toggle/labcoat/genetics;
 	uniform = /obj/item/clothing/under/rank/medical/geneticist
@@ -4168,8 +4168,8 @@
 "kj" = (
 /obj/effect/mob_spawn/human/doctor{
 	brute_damage = 145;
-	id_job = "Geneticist";
-	name = "Geneticist";
+	id_job = "Генетик";
+	name = "Генетик";
 	oxy_damage = 55;
 	suit = /obj/item/clothing/suit/toggle/labcoat/genetics;
 	uniform = /obj/item/clothing/under/rank/medical/geneticist
@@ -5022,8 +5022,8 @@
 	},
 /obj/effect/mob_spawn/human/doctor{
 	brute_damage = 145;
-	id_job = "Geneticist";
-	name = "Geneticist";
+	id_job = "Генетик";
+	name = "Генетик";
 	oxy_damage = 55;
 	suit = /obj/item/clothing/suit/toggle/labcoat/genetics;
 	uniform = /obj/item/clothing/under/rank/medical/geneticist

@@ -5,32 +5,32 @@
 	"map_id": "lamia",
 	"limit": 2,
 	"job_slots": {
-		"Alchemist": {
+		"Алхимик": {
 			"outfit": "/datum/outfit/job/bartender",
 			"officer": true,
 			"slots": 1
 		},
-		"Gastronomer": {
+		"Гастроном": {
 			"outfit": "/datum/outfit/job/cook",
 			"slots": 1
 		},
-		"Lorekeeper": {
+		"Хранитель знаний": {
 			"outfit": "/datum/outfit/job/curator/dungeonmaster",
 			"slots": 1
 		},
-		"Geomancer": {
+		"Геомант": {
 			"outfit": "/datum/outfit/job/miner",
 			"slots": 1
 		},
-		"Allomancer": {
+		"Алломант": {
 			"outfit": "/datum/outfit/job/engineer",
 			"slots": 1
 		},
-		"Scholar": {
+		"Ученый": {
 			"outfit": "/datum/outfit/job/scientist",
 			"slots": 1
 		},
-		"Apprentice": {
+		"Ученик": {
 			"outfit": "/datum/outfit/job/assistant",
 			"slots": 5
 		}

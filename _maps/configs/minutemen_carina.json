@@ -7,33 +7,33 @@
 	"map_id": "minutemen_carina",
 	"limit": 1,
 	"job_slots": {
-		"Captain": {
+		"Капитан": {
 			"outfit": "/datum/outfit/job/captain/minutemen",
 			"officer": true,
 			"slots": 1
 		},
-		"Bridge Officer": {
+		"Офицер мостика": {
 			"outfit": "/datum/outfit/job/head_of_personnel/minutemen",
 			"officer": true,
 			"slots": 1
 		},
-		"Field Medic": {
+		"Полевой Медик": {
 			"outfit": "/datum/outfit/job/doctor/minutemen",
 			"slots": 1
 		},
-		"Mechanic": {
+		"Механик": {
 			"outfit": "/datum/outfit/job/engineer/minutemen",
 			"slots": 1
 		},
-		"Armorer": {
+		"Оружейник": {
 			"outfit": "/datum/outfit/job/warden/minutemen",
 			"slots": 1
 		},
-		"Minuteman": {
+		"Милитарист": {
 			"outfit": "/datum/outfit/job/security/minutemen",
 			"slots": 3
 		},
-		"Cadet": {
+		"Кадет": {
 			"outfit": "/datum/outfit/job/assistant/minutemen",
 			"slots": 5
 		}

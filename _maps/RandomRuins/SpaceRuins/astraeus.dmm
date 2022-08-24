@@ -46,7 +46,7 @@
 "ch" = (
 /obj/structure/chair/comfy/black{
 	dir = 4;
-	name = "Captain"
+	name = "Капитан"
 	},
 /obj/effect/decal/cleanable/dirt,
 /turf/open/floor/plasteel/dark/airless,

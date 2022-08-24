@@ -4,6 +4,6 @@
 	"map_path": "_maps/shuttles/shiptest/radio_funny.dmm",
 	"map_id": "radio_funny",
 	"job_slots": {
-		"Assistant": 6
+		"Ассистент": 6
 	}
 }

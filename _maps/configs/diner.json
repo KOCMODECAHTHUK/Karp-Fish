@@ -6,11 +6,11 @@
 	"map_path": "_maps/shuttles/shiptest/bar_ship.dmm",
 	"map_id": "bar_ship",
 	"job_slots": {
-		"Bartender": 1,
-		"Cook": 5,
-		"Botanist": 2,
-		"Janitor": 1,
-		"Waiter": {
+		"Бармен": 1,
+		"Повар": 5,
+		"Ботаник": 2,
+		"Уборщик": 1,
+		"Официант": {
 			"outfit": "/datum/outfit/job/assistant/waiter",
 			"slots": 2
 		}

@@ -6,6 +6,6 @@
 	"map_path": "_maps/shuttles/shiptest/pill_super.dmm",
 	"map_id": "pill_super",
 	"job_slots": {
-		"Prisoner": 3
+		"Заключённый": 3
 	}
 }

@@ -7,28 +7,28 @@
 	"namelists": "GENREAL, SPACE",
 	"roundstart": true,
 	"job_slots": {
-		"Captain": {
+		"Капитан": {
 			"outfit": "/datum/outfit/job/captain/western",
 			"officer": true,
 			"slots": 1
 		},
-		"Ship's Doctor": {
+		"Судовой врач": {
 			"outfit": "/datum/outfit/job/doctor",
 			"slots": 1
 		},
-		"Engine Technician": {
+		"Техник по двигателям": {
 			"outfit": "/datum/outfit/job/atmos",
 			"slots": 1
 		},
-		"Asteroid Miner": {
+		"Шахтер астероида": {
 			"outfit": "/datum/outfit/job/miner/hazard",
 			"slots": 1
 		},
-		"Fauna Researcher": {
+		"Исследователь фауны": {
 			"outfit": "/datum/job/scientist",
 			"slots": 1
 		},
-		"Assistant": 1
+		"Ассистент": 1
 	},
 	"cost": 750
 }

@@ -4,17 +4,17 @@
 	"map_path": "_maps/shuttles/shiptest/independent_litieguai.dmm",
 	"map_id": "independent_litieguai",
 	"job_slots": {
-		"Captain": 1,
-		"Chief Medical Officer": {
+		"Капитан": 1,
+		"Главный Врач": {
 			"outfit": "/datum/outfit/job/cmo/medicaldirector",
 			"officer": true,
 			"slots": 1
 		},
-		"Trauma Team Technician": {
+		"Техник Травматологической Бригады": {
 			"outfit": "/datum/outfit/job/paramedic/traumateam",
 			"slots": 3
 		},
-		"Medical Intern": {
+		"Медицинский интерн": {
 			"outfit": "/datum/outfit/job/doctor/juniordoctor",
 			"slots": 3
 		}

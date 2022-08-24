@@ -4,10 +4,10 @@
 	"map_path": "_maps/shuttles/shiptest/chapel.dmm",
 	"map_id": "chapel",
 	"job_slots": {
-		"Chaplain": 1,
-		"Curator": 1,
-		"Station Engineer": 2,
-		"Assistant": 6
+		"Капеллан": 1,
+		"Куратор": 1,
+		"Инженер": 2,
+		"Ассистент": 6
 	},
 	"cost": 620
 }

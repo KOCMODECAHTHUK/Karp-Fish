@@ -257,7 +257,7 @@
 "fe" = (
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/zombie{
-	zombiejob = "Geneticist"
+	zombiejob = "Генетик"
 	},
 /turf/open/floor/plasteel/tech/techmaint,
 /area/ship/science)
@@ -535,7 +535,7 @@
 	},
 /obj/effect/gibspawner/human,
 /mob/living/simple_animal/hostile/zombie{
-	zombiejob = "Janitor"
+	zombiejob = "Уборщик"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
@@ -563,7 +563,7 @@
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/zombie{
 	name = "Zombiefied Facility Director";
-	zombiejob = "Research Director"
+	zombiejob = "Научный Руководитель"
 	},
 /turf/open/floor/carpet/blue,
 /area/ship/bridge)
@@ -1757,7 +1757,7 @@
 /area/ship/science/storage)
 "Cg" = (
 /mob/living/simple_animal/hostile/zombie{
-	zombiejob = "Assistant"
+	zombiejob = "Ассистент"
 	},
 /obj/item/rack_parts,
 /turf/open/floor/plating/catwalk_floor,
@@ -2204,7 +2204,7 @@
 /area/ship/science)
 "Jx" = (
 /mob/living/simple_animal/hostile/zombie{
-	zombiejob = "Chemist"
+	zombiejob = "Химик"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/science/storage)
@@ -2406,7 +2406,7 @@
 	pixel_y = -13
 	},
 /mob/living/simple_animal/hostile/zombie{
-	zombiejob = "Assistant"
+	zombiejob = "Ассистент"
 	},
 /turf/open/floor/plasteel/dark,
 /area/ship/crew/office)
@@ -3070,7 +3070,7 @@
 	},
 /obj/effect/decal/cleanable/dirt/dust,
 /mob/living/simple_animal/hostile/zombie{
-	zombiejob = "Assistant"
+	zombiejob = "Ассистент"
 	},
 /turf/open/floor/plasteel/white,
 /area/ship/hallway)

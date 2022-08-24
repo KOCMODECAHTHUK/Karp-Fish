@@ -6,17 +6,17 @@
 	"map_path": "_maps/shuttles/shiptest/whiteship_pubby.dmm",
 	"map_id": "whiteship_pubby",
 	"job_slots": {
-		"Captain": {
+		"Капитан": {
 			"outfit": "/datum/outfit/job/captain/nt",
 			"officer": true,
 			"slots": 1
 		},
-		"Shaft Miner": 1,
-		"Engineer": {
+		"Шахтер": 1,
+		"Инженер": {
 			"outfit": "/datum/outfit/job/engineer/nt",
 			"slots": 1
 		},
-		"Pilot": {
+		"Пилот": {
 			"outfit": "/datum/outfit/job/security/nanotrasen",
 			"slots": 2
 		}

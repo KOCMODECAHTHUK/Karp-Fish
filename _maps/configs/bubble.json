@@ -4,11 +4,11 @@
 	"map_path": "_maps/shuttles/shiptest/ntsv_bubble.dmm",
 	"map_id": "ntsv_bubble",
 	"job_slots": {
-		"Captain": 1,
-		"Scientist": 1,
-		"Station Engineer": 1,
-		"Shaft Miner": 1,
-		"Assistant": 3
+		"Капитан": 1,
+		"Ученый": 1,
+		"Инженер": 1,
+		"Шахтер": 1,
+		"Ассистент": 3
 	},
 	"cost": 500
 }

@@ -8,19 +8,19 @@
 	"map_id": "engi_moth",
 	"limit": 1,
 	"job_slots": {
-		"Project Overseer": {
+		"Руководитель проекта": {
 			"outfit": "/datum/outfit/job/ce/gec",
 			"slots": 1
 		},
-		"Ship Engineer": {
+		"Корабельный Инженер": {
 			"outfit": "/datum/outfit/job/engineer/gec",
 			"slots": 3
 		},
-		"Atmospheric Technician": {
+		"Атмосферный Техник": {
 			"outfit": "/datum/outfit/job/atmos/gec",
 			"slots": 2
 		},
-		"Chemical Engineer": {
+		"Инженер-химик": {
 			"outfit": "/datum/outfit/job/chemist/gec",
 			"slots": 1
 		}

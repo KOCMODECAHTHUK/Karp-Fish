@@ -14,30 +14,30 @@
 	"map_id": "ntsv_osprey",
 	"limit": 1,
 	"job_slots": {
-		"Captain": {
+		"Капитан": {
 			"outfit": "/datum/outfit/job/captain/nt",
 			"officer": true,
 			"slots": 1
 		},
-		"First Officer": {
+		"Первый офицер": {
 			"outfit": "/datum/outfit/job/head_of_personnel/nt",
 			"officer": true,
 			"slots": 1
 		},
-		"Scientist": 2,
-		"Medical Doctor": 1,
-		"Paramedic": 1,
-		"Engineer": {
+		"Ученый": 2,
+		"Врач": 1,
+		"Парамедик": 1,
+		"Инженер": {
 			"outfit": "/datum/outfit/job/engineer/nt",
 			"slots": 1
 		},
-		"Atmospheric Technician": 1,
-		"Quartermaster": 1,
-		"Cargo Technician": 1,
-		"Shaft Miner": 1,
-		"Cook": 1,
-		"Janitor": 1,
-		"Assistant": 5
+		"Атмосферный Техник": 1,
+		"Квартирмейстер": 1,
+		"Грузчик:": 1,
+		"Шахтер": 1,
+		"Повар": 1,
+		"Уборщик": 1,
+		"Ассистент": 5
 	},
 	"cost": 850
 }

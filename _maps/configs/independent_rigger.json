@@ -8,37 +8,37 @@
 	"roundstart": true,
 	"limit": 2,
 	"job_slots": {
-		"Captain": {
+		"Капитан": {
 			"outfit": "/datum/outfit/job/captain/western",
 			"officer": true,
 			"slots": 1
 		},
-		"First Mate": {
+		"Первый Помощник": {
 			"outfit": "/datum/outfit/job/head_of_personnel/western",
 			"officer": true,
 			"slots": 1
 		},
-		"Ship's Doctor": {
+		"Судовой врач": {
 			"outfit": "/datum/outfit/job/doctor",
 			"slots": 1
 		},
-		"Machinist's Mate": {
+		"Помощник машиниста": {
 			"outfit": "/datum/outfit/job/engineer",
 			"slots": 2
 		},
-		"Asteroid Miner": {
+		"Шахтер астероида": {
 			"outfit": "/datum/outfit/job/miner/hazard",
 			"slots": 2
 		},
-		"Mech Technician": {
+		"Механик-техник": {
 			"outfit": "/datum/outfit/job/roboticist/technician",
 			"slots": 1
 		},
-		"Security Detail": {
+		"Служба безопасности": {
 			"outfit": "/datum/outfit/job/security/western",
 			"slots": 1
 		},
-		"Deckhand": {
+		"Палубная команда": {
 			"outfit": "/datum/outfit/job/assistant",
 			"slots": 4
 		}

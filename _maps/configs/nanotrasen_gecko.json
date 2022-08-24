@@ -7,17 +7,17 @@
 	"map_id": "nanotrasen_gecko",
 	"limit": 2,
 	"job_slots": {
-		"Captain": {
+		"Капитан": {
 			"outfit": "/datum/outfit/job/captain/nt",
 			"officer": true,
 			"slots": 1
 		},
-		"Operations Chief": {
+		"Начальник оперативного отдела": {
 			"outfit": "/datum/outfit/job/ce",
 			"officer": true,
 			"slots": 1
 		},
-		"Engine Technician": {
+		"Техник по двигателям": {
 			"outfit": "/datum/outfit/job/engineer/nt",
 			"slots": 2
 		},
@@ -25,7 +25,7 @@
 			"outfit": "/datum/outfit/job/miner/classic",
 			"slots": 2
 		},
-		"Deckhand": {
+		"Палубная команда": {
 			"outfit": "/datum/outfit/job/assistant",
 			"slots": 4
 		}

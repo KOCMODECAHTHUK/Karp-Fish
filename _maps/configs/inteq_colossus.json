@@ -7,24 +7,24 @@
 	"map_id": "inteq_colossus",
 	"limit": 1,
 	"job_slots": {
-		"Vanguard": {
+		"Авангард": {
 			"outfit": "/datum/outfit/job/hos/inteq/naked",
 			"officer": true,
 			"slots": 1
 		},
-		"Artificer": {
+		"Ремесленник": {
 			"outfit": "/datum/outfit/job/engineer/inteq",
 			"slots": 1
 		},
-		"Corpsman": {
+		"Санитар": {
 			"outfit": "/datum/outfit/job/paramedic/inteq",
 			"slots": 1
 		},
-		"Enforcer": {
+		"Силовик": {
 			"outfit": "/datum/outfit/job/security/inteq",
 			"slots": 3
 		},
-		"Recruit": {
+		"Новобранец": {
 			"outfit": "/datum/outfit/job/assistant/inteq",
 			"slots": 5
 		}

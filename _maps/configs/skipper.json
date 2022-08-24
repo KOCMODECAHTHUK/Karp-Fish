@@ -5,29 +5,29 @@
 	"map_id": "ntsv_skipper",
 	"roundstart": true,
 	"job_slots": {
-		"Captain": {
+		"Капитан": {
 			"outfit": "/datum/outfit/job/captain/nt",
 			"officer": true,
 			"slots": 1
 		},
-		"First Officer": {
+		"Первый офицер": {
 			"outfit": "/datum/outfit/job/head_of_personnel/nt",
 			"officer": true,
 			"slots": 1
 		},
-		"SolGov Representative": 1,
-		"Medical Doctor": 2,
-		"Engineer": {
+		"Представитель КПСС": 1,
+		"Врач": 2,
+		"Инженер": {
 			"outfit": "/datum/outfit/job/engineer/nt",
 			"slots": 3
 		},
-		"Shaft Miner": 2,
-		"Cargo Technician": 2,
-		"Security Officer": {
+		"Шахтер": 2,
+		"Грузчик:": 2,
+		"Офицер": {
 			"outfit": "/datum/outfit/job/security/nanotrasen",
 			"slots": 1
 		},
-		"Assistant": 5
+		"Ассистент": 5
 	},
 	"cost": 750
 }

@@ -5,19 +5,19 @@
 	"map_id": "wright",
 	"limit": 2,
 	"job_slots": {
-		"Detective": {
+		"Детектив": {
 			"outfit": "/datum/outfit/job/detective",
 			"officer": true,
 			"slots": 1
 		},
-		"Lawyer": 2,
-		"Clown": 1,
-		"Mime": 1,
-		"Secretary": {
+		"Адвокат": 2,
+		"Клоун": 1,
+		"Мим": 1,
+		"Секретарь": {
 			"outfit": "/datum/outfit/job/assistant/receptionist",
 			"slots": 1
 		},
-		"Intern": {
+		"Стажер": {
 			"outfit": "/datum/outfit/job/assistant/intern",
 			"slots": 4
 		}

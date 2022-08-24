@@ -2942,7 +2942,7 @@
 "VY" = (
 /obj/structure/closet/secure_closet{
 	anchored = 1;
-	icon_state = "warden";
+	icon_state = "Надзиратель";
 	name = "foreman's locker";
 	req_access = list(56)
 	},

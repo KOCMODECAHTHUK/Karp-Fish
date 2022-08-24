@@ -4,29 +4,29 @@
 	"map_path": "_maps/shuttles/shiptest/pirate_libertatia.dmm",
 	"map_id": "libertatia",
 	"job_slots": {
-		"Captain": {
+		"Капитан": {
 			"outfit": "/datum/outfit/job/captain/pirate",
 			"officer": true,
 			"slots": 1
 		},
-		"First Mate": {
+		"Первый помощник": {
 			"outfit": "/datum/outfit/job/head_of_personnel/pirate",
 			"officer": true,
 			"slots": 1
 		},
-		"Buccaneer": {
+		"Буканьер": {
 			"outfit": "/datum/outfit/job/security/pirate",
 			"slots": 2
 		},
-		"Motorman": {
+		"Машинист": {
 			"outfit": "/datum/outfit/job/engineer/pirate",
 			"slots": 1
 		},
-		"Ship's Doctor": {
+		"Судовой врач": {
 			"outfit": "/datum/outfit/job/doctor/pirate",
 			"slots": 1
 		},
-		"Deckhand": {
+		"Палубная команда": {
 			"outfit": "/datum/outfit/job/assistant/pirate",
 			"slots": 4
 		}

@@ -7,28 +7,28 @@
 	"map_id": "mining_ship",
 	"roundstart": true,
 	"job_slots": {
-		"Captain": {
+		"Капитан": {
 			"outfit": "/datum/outfit/job/captain/western",
 			"officer": true,
 			"slots": 1
 		},
-		"Foreman": {
+		"Прораб": {
 			"outfit": "/datum/outfit/job/quartermaster/western",
 			"slots": 1
 		},
-		"Ship's Doctor": {
+		"Судовой врач": {
 			"outfit": "/datum/outfit/job/doctor",
 			"slots": 1
 		},
-		"Ship's Engineer": {
+		"Судовой Инженер": {
 			"outfit": "/datum/outfit/job/engineer/hazard",
 			"slots": 1
 		},
-		"Asteroid Miner": {
+		"Шахтер астероида": {
 			"outfit": "/datum/outfit/job/miner/hazard",
 			"slots": 2
 		},
-		"Deckhand": {
+		"Палубная команда": {
 			"outfit": "/datum/outfit/job/assistant",
 			"slots": 3
 		}

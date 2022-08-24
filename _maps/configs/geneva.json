@@ -5,28 +5,28 @@
 	"map_path": "_maps/shuttles/shiptest/syndicate_geneva.dmm",
 	"map_id": "syndicate_geneva",
 	"job_slots": {
-		"Medical Professor": {
+		"Профессор медицины": {
 			"outfit": "/datum/outfit/job/cmo/syndicate/nsv",
 			"officer": true,
 			"slots": 1
 		},
-		"Medical Student": {
+		"Студент-медик": {
 			"outfit": "/datum/outfit/job/doctor/syndicate/nsv",
 			"slots": 2
 		},
-		"Natural Medicine Specialist": {
+		"Специалист по естественной медицине": {
 			"outfit": "/datum/outfit/job/botanist/syndicate/nsv",
 			"slots": 1
 		},
-		"Union Engineer": {
+		"Профсоюзный инженер": {
 			"outfit": "/datum/outfit/job/engineer/gec",
 			"slots": 1
 		},
-		"Rescue Specialist": {
+		"Специалист по спасению": {
 			"outfit": "/datum/outfit/job/miner/syndicate",
 			"slots": 1
 		},
-		"Paramedic": {
+		"Парамедик": {
 			"outfit": "/datum/outfit/job/paramedic/syndicate/gorlex",
 			"slots": 1
 		}
