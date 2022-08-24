@@ -243,7 +243,7 @@
 	item_state = "sunglasses"
 
 /obj/item/clothing/glasses/hud/security/sunglasses/inteq
-	name = "inteq ballistic HUD"
+	name = "с.e.l.l. ballistic HUD"
 	desc = "A snazzy looking pair of ballistic goggles with an integrated security hud. The opaque visor provides flash protection."
 	icon_state = "inteq_goggles"
 	item_state = "inteq_goggles"

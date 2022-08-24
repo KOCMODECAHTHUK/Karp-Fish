@@ -46,7 +46,7 @@
 	channels = list(RADIO_CHANNEL_MINUTEMEN = 1)
 
 /obj/item/encryptionkey/inteq
-	name = "inteq encryption key"
+	name = "с.e.l.l. encryption key"
 	icon_state = "irmg_cypherkey"
 	channels = list(RADIO_CHANNEL_INTEQ = 1)
 

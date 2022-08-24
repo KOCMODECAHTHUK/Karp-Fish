@@ -48,7 +48,7 @@
 	item_state = "syndimaid_arms"
 
 /obj/item/clothing/gloves/combat/maid/inteq
-	name = "inteq combat maid sleeves"
+	name = "с.e.l.l. combat maid sleeves"
 	desc = "Tacticute and comfy, along with being both fireproof and electrically insulated."
 	icon_state = "inteqmaid_arms"
 	item_state = "inteqmaid_arms"

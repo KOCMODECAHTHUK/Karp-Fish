@@ -45,26 +45,22 @@
 /proc/ru_comms(freq)
 	if(freq == "Common")
 		return "Основной"
-	else if (freq == "Security")
-		return "Безопасность"
-	else if (freq == "Engineering")
-		return "Инженерия"
-	else if (freq == "Command")
-		return "Командование"
-	else if (freq == "Science")
-		return "Научный"
-	else if (freq == "Medical")
-		return "Медбей"
-	else if (freq == "Supply")
-		return "Снабжение"
-	else if (freq == "Service")
-		return "Обслуживание"
-	else if (freq == "AI Private")
-		return "Приватный ИИ"
+	else if (freq == "Nanotrasen")
+		return "Нанотразен"
 	else if (freq == "Syndicate")
 		return "Синдикат"
+	else if (freq == "SolGov")
+		return "КПСС"
+	else if (freq == "Pirate")
+		return "Пираты"
+	else if (freq == "Minutemen")
+		return "Милитаристы"
+	else if (freq == "Inteq")
+		return "C.E.L.L."
+	else if (freq == "AI Private")
+		return "Приватный ИИ"
 	else if (freq == "CentCom")
-		return "ЦентКом"
+		return "ЦентрКом"
 	else if (freq == "Red Team")
 		return "Советы"
 	else if (freq == "Blue Team")
@@ -75,8 +71,6 @@
 		return "Хохлы"
 	else if (freq == "Wideband")
 		return "Криптосвязь"
-	else if (freq == "Solgov")
-		return "КПСС"
 	else
 		return freq
 

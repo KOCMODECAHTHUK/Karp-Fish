@@ -144,7 +144,7 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/inteq
-	name = "inteq utility cover"
+	name = "с.e.l.l. utility cover"
 	desc = "A drab brown utility cover with a golden insignia on it. Worn by IRMG operators."
 	icon_state = "inteqsoft"
 	soft_type = "inteq"
@@ -152,7 +152,7 @@
 	dog_fashion = null
 
 /obj/item/clothing/head/soft/inteq/corpsman
-	name = "inteq corpsman utility cover"
+	name = "с.e.l.l. corpsman utility cover"
 	desc = "A sterile white utility cover with a blue cross emblazoned on it. Worn by the IRMG's support division corpsmen."
 	icon_state = "inteqmedsoft"
 	soft_type = "inteqmed"

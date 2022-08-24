@@ -343,14 +343,14 @@
 	armor = list("melee" = 25, "bullet" = 20, "laser" = 20, "energy" = 30, "bomb" = 20, "bio" = 50, "rad" = 20, "fire" = -10, "acid" = 50)
 
 /obj/item/clothing/suit/armor/hos/inteq
-	name = "inteq battle coat"
+	name = "с.e.l.l. battle coat"
 	desc = "A luxurious brown coat with an crossweave of Kevlar and fur from genuine wolves, as protective as it is stylish."
 	icon_state = "inteq_battlecoat"
 	item_state = "inteq_battlecoat"
 	supports_variations = DIGITIGRADE_VARIATION | VOX_VARIATION
 
 /obj/item/clothing/suit/armor/inteq/corpsman
-	name = "inteq corpsman vest"
+	name = "с.e.l.l. corpsman vest"
 	desc = "A shortened brown labcoat with an armor vest under it, for the IRMG's support division medical staff."
 	icon_state = "inteq_labcoat"
 	item_state = "inteq_labcoat"

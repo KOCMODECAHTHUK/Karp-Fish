@@ -494,7 +494,7 @@
 	item_state = "syndieheadband"
 
 /obj/item/clothing/head/maidheadband/inteq
-	name = "inteq maid headband"
+	name = "с.e.l.l. maid headband"
 	desc = "Tacticute."
 	icon_state = "inteqheadband"
 	item_state = "inteqheadband"

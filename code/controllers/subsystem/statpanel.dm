@@ -14,19 +14,19 @@ SUBSYSTEM_DEF(statpanels)
 		var/actual_round_time = world.timeofday - SSticker.round_start_timeofday
 		var/game_round_time = world.time - SSticker.round_start_time
 		var/list/global_data = list(
-			"Round ID: [GLOB.round_id ? GLOB.round_id : "NULL"]",
-			"Time Dilation: [round(SStime_track.time_dilation_current,1)]% AVG:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)",
-			"Server Time: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
-			"Local Time: [station_time_timestamp()]",
+			"ID раунда: [GLOB.round_id ? GLOB.round_id : "NULL"]",
+			"Замедление времени: [round(SStime_track.time_dilation_current,1)]% СРД:([round(SStime_track.time_dilation_avg_fast,1)]%, [round(SStime_track.time_dilation_avg,1)]%, [round(SStime_track.time_dilation_avg_slow,1)]%)",
+			"Серверное Время: [time2text(world.timeofday, "YYYY-MM-DD hh:mm:ss")]",
+			"Локальное Время: [station_time_timestamp()]",
 			"\n",
-			"Internal Round Timer: [SSticker.round_start_time ? time2text(game_round_time, "hh:mm:ss", 0) : "The round hasn't started yet!"]",
-			"Actual Round Timer: [SSticker.round_start_timeofday ? time2text(actual_round_time, "hh:mm:ss", 0) : "The round hasn't started yet!"]",
+			"Длительность раунда: [SSticker.round_start_time ? time2text(game_round_time, "hh:mm:ss", 0) : "Раунд еще не начался!"]",
+			"Время на станции: [SSticker.round_start_timeofday ? time2text(actual_round_time, "hh:mm:ss", 0) : "Раунд еще не начался!"]",
 			"\n",
-			"Playing/Connected: [get_active_player_count()]/[GLOB.clients.len]"
+			"Играет/Подключилось: [get_active_player_count()]/[GLOB.clients.len]"
 		)
 
 		if(SSshuttle.jump_mode != BS_JUMP_IDLE)
-			global_data += "Jump: [round(timeleft(SSshuttle.jump_timer)/10)]s"
+			global_data += "Прыжок: [round(timeleft(SSshuttle.jump_timer)/10)]s"
 		encoded_global_data = url_encode(json_encode(global_data))
 		src.currentrun = GLOB.clients.Copy()
 		mc_data_encoded = null
@@ -37,7 +37,7 @@ SUBSYSTEM_DEF(statpanels)
 		if(!target?.statbrowser_ready)
 			continue
 		if(target.stat_tab == "Status")
-			var/ping_str = url_encode("Ping: [round(target.lastping, 1)]ms (Average: [round(target.avgping, 1)]ms)")
+			var/ping_str = url_encode("Пинг: [round(target.lastping, 1)]мс (Средний: [round(target.avgping, 1)]мс)")
 			var/other_str = url_encode(json_encode(target.mob.get_status_tab_items()))
 			target << output("[encoded_global_data];[ping_str];[other_str]", "statbrowser:update")
 		if(!target.holder)
@@ -63,7 +63,7 @@ SUBSYSTEM_DEF(statpanels)
 					var/datum/interview/I = m.open_interviews[ckey]
 					if (I && !I.owner)
 						dc++
-				var/stat_string = "([m.open_interviews.len - dc] online / [dc] disconnected)"
+				var/stat_string = "([m.open_interviews.len - dc] онлайн / [dc] отключилось)"
 
 				// Prepare each queued interview
 				var/list/queued = list()

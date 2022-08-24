@@ -485,14 +485,14 @@
 	strip_delay = 80
 
 /obj/item/clothing/head/helmet/swat/inteq
-	name = "inteq SWAT helmet"
+	name = "с.e.l.l. SWAT helmet"
 	desc = "A robust and spaceworthy helmet with an opaque gold visor. There is an insignia on the earpad with the letters 'IRMG' on it."
 	icon_state = "inteq_swat"
 	item_state = "inteq_swat"
 	flags_inv = HIDEHAIR
 
 /obj/item/clothing/head/helmet/inteq
-	name = "inteq helmet"
+	name = "с.e.l.l. helmet"
 	desc = "A standard issue helmet in the colors of the IRMG. It doesn't feel special in any way."
 	icon_state = "inteq_helmet"
 	icon_state = "inteq_helmet"

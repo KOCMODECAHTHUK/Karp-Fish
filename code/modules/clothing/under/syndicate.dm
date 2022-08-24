@@ -226,7 +226,7 @@
 	uplink_slot = ITEM_SLOT_BELT
 
 /obj/item/clothing/under/syndicate/inteq
-	name = "inteq turtleneck"
+	name = "с.e.l.l. turtleneck"
 	desc = "A drab brown turtleneck with black digital camo pants, it has a small 'IRMG' embroidered onto the shoulder."
 	icon_state = "inteq"
 	item_state = "bl_suit"
@@ -238,7 +238,7 @@
 	mob_overlay_icon = 'icons/mob/clothing/under/syndicate.dmi'
 
 /obj/item/clothing/under/syndicate/inteq/skirt
-	name = "inteq skirtleneck"
+	name = "с.e.l.l. skirtleneck"
 	desc = "A drab brown turtleneck with a free flowing black skirt, it has a small 'IRMG' embroidered onto the shoulder."
 	icon_state = "inteq_skirt"
 	item_state = "bl_suit"
@@ -250,31 +250,31 @@
 	fitted = FEMALE_UNIFORM_TOP
 
 /obj/item/clothing/under/syndicate/inteq/artificer
-	name = "inteq artificer overalls"
+	name = "с.e.l.l. artificer overalls"
 	desc = "A black set of overalls atop a standard issue turtleneck, for the IRMG's support division engineers."
 	icon_state = "inteqeng"
 	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/under/syndicate/inteq/skirt/artificer
-	name = "inteq artificer overall skirt"
+	name = "с.e.l.l. artificer overall skirt"
 	desc = "A black set of overalls in the likeness of a skirt atop a standard issue turtleneck, for the IRMG's support division engineers."
 	icon_state = "inteqeng_skirt"
 	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/under/syndicate/inteq/corpsman
-	name = "inteq corpsman turtleneck"
+	name = "с.e.l.l. corpsman turtleneck"
 	desc = "A sterile white turtleneck with tactical cargo pants, it is emblazoned with the lettering 'IRMG' on the shoulder. For the IRMG's support division corpsmen."
 	icon_state = "inteqmed"
 	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/under/syndicate/inteq/skirt/corpsman
-	name = "inteq corpsman skirtleneck"
+	name = "с.e.l.l. corpsman skirtleneck"
 	desc = "A sterile white turtleneck with a free flowing black skirt, it is emblazoned with the lettering 'IRMG' on the shoulder. For the IRMG's support division corpsmen."
 	icon_state = "inteqmed_skirt"
 	supports_variations = KEPORI_VARIATION
 
 /obj/item/clothing/under/syndicate/inteq/skirt/maid
-	name = "inteq tactical maid outfit"
+	name = "с.e.l.l. tactical maid outfit"
 	desc = "A 'tactical' turtleneck fashioned to the likeness of a maid outfit. This one is lovingly knitted in the colors of the IRMG."
 	icon_state = "inteqmaid"
 	item_state = "inteqmaid"

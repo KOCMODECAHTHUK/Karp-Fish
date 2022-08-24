@@ -183,26 +183,26 @@ GLOBAL_LIST_INIT(channel_tokens, list(
 
 //inteq
 /obj/item/radio/headset/inteq
-	name = "inteq radio headset"
-	desc = "This is used by Inteq Risk Management Group's mercenaries."
+	name = "с.e.l.l. radio headset"
+	desc = "This is used by CryNet Enforcement & Local Logistics mercenaries."
 	icon_state = "inteq_headset"
 	keyslot = new /obj/item/encryptionkey/inteq
 
 /obj/item/radio/headset/inteq/captain
 	name = "vanguard radio headset"
-	desc = "Used by Inteq Risk Management Group's elite vanguards."
+	desc = "Used by CryNet Enforcement & Local Logistics elite vanguards."
 	keyslot2 = new /obj/item/encryptionkey/heads/captain
 	command = TRUE
 
 /obj/item/radio/headset/inteq/alt
-	name = "inteq bowman headset"
-	desc = "This is used by Inteq Risk Management Group's mercenaries. Protects ears from flashbangs."
+	name = "с.e.l.l. bowman headset"
+	desc = "This is used by CryNet Enforcement & Local Logistics mercenaries. Protects ears from flashbangs."
 	icon_state = "inteq_headset_alt"
 	item_state = "inteq_headset_alt"
 
 /obj/item/radio/headset/inteq/alt/captain
 	name = "vanguard bowman headset"
-	desc = "Used by Inteq Risk Management Group's elite vanguards. Protects ears from flashbangs."
+	desc = "Used by CryNet Enforcement & Local Logistics elite vanguards. Protects ears from flashbangs."
 	keyslot2 = new /obj/item/encryptionkey/heads/captain
 	command = TRUE
 

@@ -408,7 +408,7 @@
 	item_state = "courierbagsec"
 
 /obj/item/storage/backpack/messenger/inteq
-	name = "inteq messenger bag"
+	name = "с.e.l.l. messenger bag"
 	desc = "A comfortable leather strapped messenger bag worn over one shoulder. This one denotes the wearer as an IRMG operator"
 	icon_state = "courierbaginteq"
 	item_state = "courierbaginteq"

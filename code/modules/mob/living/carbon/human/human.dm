@@ -57,16 +57,16 @@
 
 /mob/living/carbon/human/get_status_tab_items()
 	. = ..()
-	. += "Intent: [a_intent]"
-	. += "Move Mode: [m_intent]"
+	. += "Взаимодействие: [a_intent]"
+	. += "Режим перемещения: [m_intent]"
 	if (internal)
 		if (!internal.air_contents)
 			qdel(internal)
 		else
 			. += ""
-			. += "Internal Atmosphere Info: [internal.name]"
-			. += "Tank Pressure: [internal.air_contents.return_pressure()]"
-			. += "Distribution Pressure: [internal.distribute_pressure]"
+			. += "Источник: [internal.name]"
+			. += "Давление: [internal.air_contents.return_pressure()]"
+			. += "Подача: [internal.distribute_pressure]"
 	/*WS begin - no cells in suits
 	if(istype(wear_suit, /obj/item/clothing/suit/space))
 		var/obj/item/clothing/suit/space/S = wear_suit

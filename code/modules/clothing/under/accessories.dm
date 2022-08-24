@@ -107,7 +107,7 @@
 	item_state = "maidapronsynd"
 
 /obj/item/clothing/accessory/maidapron/inteq
-	name = "inteq maid apron"
+	name = "с.e.l.l. maid apron"
 	desc = "A 'tactical' apron to protect you from all sorts of spills, from dough to blood!"
 	icon_state = "inteqmaidapron"
 	item_state = "inteqmaidapron"

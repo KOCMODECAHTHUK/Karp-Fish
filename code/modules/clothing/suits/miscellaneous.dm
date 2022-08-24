@@ -679,7 +679,7 @@
 	armor = list("melee" = 10, "bullet" = 0, "laser" = 0, "energy" = 0, "bomb" = 0, "bio" = 0, "rad" = 0, "fire" = 0, "acid" = 0)
 
 /obj/item/clothing/suit/hooded/wintercoat/security/inteq
-	name = "inteq winter coat"
+	name = "с.e.l.l. winter coat"
 	icon_state = "coatinteq"
 	item_state = "coatinteq"
 	hoodtype = /obj/item/clothing/head/hooded/winterhood/security/inteq
@@ -688,7 +688,7 @@
 	icon_state = "winterhood_inteq"
 
 /obj/item/clothing/suit/hooded/coat/inteq
-	name = "inteq hooded coat"
+	name = "с.e.l.l. hooded coat"
 	desc = "A hooded coat with a fur trim around the hood, comfy! It has a small 'IRMG' embroidered onto the shoulder."
 	icon_state = "hoodieinteq"
 	item_state = "hoodieinteq"
@@ -696,7 +696,7 @@
 	hoodtype = /obj/item/clothing/head/hooded/coat/inteq
 
 /obj/item/clothing/head/hooded/coat/inteq
-	name = "inteq hood"
+	name = "с.e.l.l. hood"
 	desc = "A comfortable looking brown hood."
 	icon_state = "hoodinteq"
 	item_state = "hoodinteq"
